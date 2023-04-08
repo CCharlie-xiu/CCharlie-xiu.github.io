@@ -160,6 +160,11 @@
 </blockquote>
 <p><font color=blue> 到目前为止，你已经完成了 静态页面的配置</p>
 ]]></content>
+      <tags>
+        <tag>gitee pages</tag>
+        <tag>github pages</tag>
+        <tag>静态个人博客</tag>
+      </tags>
   </entry>
   <entry>
     <title>lottie动画在vue的使用</title>
@@ -446,33 +451,13 @@
   <entry>
     <title>脚手架编写</title>
     <url>/2023/04/08/%E8%84%9A%E6%89%8B%E6%9E%B6%E7%BC%96%E5%86%99/</url>
-    <content><![CDATA[<h1 id="🛎️脚手架编写"><a href="#🛎️脚手架编写" class="headerlink" title="🛎️脚手架编写"></a>🛎️脚手架编写</h1><hr>
-<blockquote>
-<p><strong>脚手架框架</strong>：</p>
-<ul>
-<li><p>bin</p>
-</li>
-<li><ul>
-<li><a class="link"   href="http://www.js/" >www.js <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
-</ul>
-</li>
-<li><p>src</p>
-</li>
-<li><ul>
-<li><p>contant.js</p>
-</li>
-<li><p>create.js</p>
-</li>
-<li><p>main.js</p>
-</li>
-</ul>
-</li>
-<li><p>package-lock.json</p>
-</li>
-<li><p>package.json</p>
-</li>
-</ul>
-</blockquote>
+    <content><![CDATA[<h1 id="🛎️脚手架"><a href="#🛎️脚手架" class="headerlink" title="🛎️脚手架"></a>🛎️脚手架</h1><hr>
+<details class="blue" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>脚手架框架 </summary>
+              <div class='content'>
+              <blockquote><ul><li><p>bin</p></li><li><ul><li><a class="link"   href="http://www.js/" >www.js <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li></ul></li><li><p>src</p></li><li><ul><li><p>contant.js</p></li><li><p>create.js</p></li><li><p>main.js</p></li></ul></li><li><p>package-lock.json</p></li><li><p>package.json</p></li></ul></blockquote>
+              </div>
+            </details>
+
 <p><img  
                      lazyload
                      src="/images/loading.svg"
@@ -538,17 +523,11 @@
 <div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line">npm i</span><br></pre></td></tr></table></figure></div>
 
 <hr>
-<h2 id="编写bin文件"><a href="#编写bin文件" class="headerlink" title="编写bin文件"></a>编写bin文件</h2><blockquote>
-<p>bin文件下创建 <a class="link"   href="http://www.js/" >www.js <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> 文件</p>
-</blockquote>
-<blockquote>
-<p>输入</p>
-<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="meta">#! /usr/bin/env node</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">require</span>(<span class="string">&quot;../src/main.js&quot;</span>)</span><br></pre></td></tr></table></figure></div>
-</blockquote>
-<ul>
-<li>回到 package.json 添加如下启动项</li>
-</ul>
-<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;bin&quot;</span>: &#123;</span><br><span class="line">  <span class="string">&quot;xiu&quot;</span>: <span class="string">&quot;./bin/www.js&quot;</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure></div>
+<h2 id="编写bin文件"><a href="#编写bin文件" class="headerlink" title="编写bin文件"></a>编写bin文件</h2><details class="blue" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>编写www.js </summary>
+              <div class='content'>
+              <blockquote><p>bin文件下创建 <a class="link"   href="http://www.js/" >www.js <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> 文件</p></blockquote><blockquote><p>输入</p><div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="meta">#! /usr/bin/env node</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">require</span>(<span class="string">&quot;../src/main.js&quot;</span>)</span><br></pre></td></tr></table></figure></div></blockquote><ul><li>回到 package.json 添加如下启动项</li></ul><div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;bin&quot;</span>: &#123;</span><br><span class="line">  <span class="string">&quot;xiu&quot;</span>: <span class="string">&quot;./bin/www.js&quot;</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure></div>
+              </div>
+            </details>
 
 <hr>
 <h2 id="⭐编写src文件"><a href="#⭐编写src文件" class="headerlink" title="⭐编写src文件"></a>⭐编写src文件</h2><hr>
@@ -713,5 +692,11 @@ let tags = await waitFnLoading(fetchTagList,&#39;fetch template tag...&#39;)&lt;
 <hr>
 <h1 id="🎈完结"><a href="#🎈完结" class="headerlink" title="🎈完结"></a>🎈完结</h1><p>祝福你也可以完成自己的脚手架</p>
 ]]></content>
+      <categories>
+        <category>额外技能</category>
+      </categories>
+      <tags>
+        <tag>脚手架</tag>
+      </tags>
   </entry>
 </search>
