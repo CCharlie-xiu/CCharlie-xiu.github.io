@@ -21,8 +21,7 @@
   <entry>
     <title>JavaScript</title>
     <url>/2023/04/08/JavaScript/</url>
-    <content><![CDATA[<p>Welcome to <a class="link"   href="https://hexo.io/" >Hexo <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>! This is your very first post. Check <a class="link"   href="https://hexo.io/docs/" >documentation <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> for more info. If you get any problems when using Hexo, you can find the answer in <a class="link"   href="https://hexo.io/docs/troubleshooting.html" >troubleshooting <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> or you can ask me on <a class="link"   href="https://github.com/hexojs/hexo/issues" >GitHub <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>.</p>
-<h2 id=""><a href="#" class="headerlink" title=""></a></h2><div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 非正则分隔</span></span><br><span class="line"><span class="string">&#x27;a,  b,c, d&#x27;</span>.<span class="title function_">split</span>(<span class="string">&#x27;,&#x27;</span>)</span><br><span class="line"><span class="comment">// [ &#x27;a&#x27;, &#x27;  b&#x27;, &#x27;c&#x27;, &#x27; d&#x27; ]</span></span><br></pre></td></tr></table></figure></div>
+    <content><![CDATA[<h2 id=""><a href="#" class="headerlink" title=""></a></h2><div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 非正则分隔</span></span><br><span class="line"><span class="string">&#x27;a,  b,c, d&#x27;</span>.<span class="title function_">split</span>(<span class="string">&#x27;,&#x27;</span>)</span><br><span class="line"><span class="comment">// [ &#x27;a&#x27;, &#x27;  b&#x27;, &#x27;c&#x27;, &#x27; d&#x27; ]</span></span><br></pre></td></tr></table></figure></div>
 
 <div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 正则分隔，去除多余的空格</span></span><br><span class="line"><span class="string">&#x27;a,  b,c, d&#x27;</span>.<span class="title function_">split</span>(<span class="regexp">/, */</span>)</span><br><span class="line"><span class="comment">// [ &#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;, &#x27;d&#x27; ]</span></span><br></pre></td></tr></table></figure></div>
 
@@ -56,6 +55,663 @@
 
 <p><code>setInterval</code>函数的用法与<code>setTimeout</code>完全一致，区别仅仅在于<code>setInterval</code>指定某个任务每隔一段时间就执行一次，也就是无限次的定时执行。</p>
 <div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> i = <span class="number">1</span></span><br><span class="line"><span class="keyword">var</span> timer = <span class="built_in">setInterval</span>(<span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">2</span>);</span><br><span class="line">&#125;, <span class="number">1000</span>)</span><br></pre></td></tr></table></figure></div>
+]]></content>
+  </entry>
+  <entry>
+    <title>【gitee pages 和 github pages】静态个人博客</title>
+    <url>/2023/04/08/githubpages%E5%92%8Cgiteepages/</url>
+    <content><![CDATA[<h1 id="静态个人博客"><a href="#静态个人博客" class="headerlink" title="静态个人博客"></a>静态个人博客</h1><hr>
+<h2 id="github-pages-创建指南"><a href="#github-pages-创建指南" class="headerlink" title="github pages 创建指南"></a>github pages 创建指南</h2><ul>
+<li><p><input disabled="" type="checkbox"> 
+创建个人 Github </p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+创建仓库，选择公开，命名以自己得昵称命名</p>
+<blockquote>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://img-blog.csdnimg.cn/2611ecb55b89433fa0ba04221712dd61.png"
+                      alt="在这里插入图片描述"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://img-blog.csdnimg.cn/8ea4a229e04a4314bc00de3b1450a8ea.png"
+                      alt="在这里插入图片描述"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://img-blog.csdnimg.cn/28afaabfbe3349049f9b635b82035cba.png"
+                      alt="在这里插入图片描述"
+                ><br><code> 这里我已经创建过了 所以报红，要是没创建过就是正常显示</code></p>
+</blockquote>
+</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://img-blog.csdnimg.cn/2ba6b49556f24fb5bed16a246e87592e.png"
+                      alt="在这里插入图片描述"
+                ></p>
+<p><font color=red >完成以上三步即创建完成</p>
+<ul>
+<li><input disabled="" type="checkbox"> 在创建好得仓库里创建一个名称为 index.html 的文件即可开始访问</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://img-blog.csdnimg.cn/d3db11dc753449b99723642281473a2a.png"
+                      alt="在这里插入图片描述"
+                ></p>
+<hr>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://img-blog.csdnimg.cn/95d47d8621a7409ab8137bfa4b9b86c3.png"
+                      alt="在这里插入图片描述"
+                ></p>
+<p><font color=red >实例展示： </p>
+<blockquote>
+<p><a class="link"   href="https://www.wuchanghua.tk/" >https://www.wuchanghua.tk/ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+</blockquote>
+<p><code> 这里为什么是 wuchanghua.tk 是我用freenom改了域名 正常显示 .github,io二级域名</code></p>
+<hr>
+<h2 id="gitee-pages-创建指南"><a href="#gitee-pages-创建指南" class="headerlink" title="gitee pages 创建指南"></a>gitee pages 创建指南</h2><p><code>和 github 创建差不多 </code></p>
+<ul>
+<li><input disabled="" type="checkbox"> 创建的时候，仓库名称和仓库地址要保持一致且和个人名称一致</li>
+</ul>
+<blockquote>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://img-blog.csdnimg.cn/70b54c31a7ac4b27b3e1c7c54522e65a.png"
+                      alt="在这里插入图片描述"
+                ></p>
+</blockquote>
+<p><code> gitee 初次创建只能是私有，在项目创建完成后需要改成公有</code></p>
+<blockquote>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://img-blog.csdnimg.cn/630ec9355bc847e5bf288cff8ceb5c83.png"
+                      alt="在这里插入图片描述"
+                ><br><code> 在管理页下面更改 公有（开源）</code></p>
+</blockquote>
+<ul>
+<li><input disabled="" type="checkbox"> 在创建好得仓库里创建一个名称为 index.html 的文件即可开始访问</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://img-blog.csdnimg.cn/d78ef861240e4fbbb98385af80f5fa8f.png"
+                      alt="在这里插入图片描述"
+                ></p>
+<p><code> 存在不一样的地方在 gitee 需要选择服务</code></p>
+<ul>
+<li><input disabled="" type="checkbox"> 在项目服务下选择 gitee pages 完成实名认证 即可</li>
+</ul>
+<blockquote>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://img-blog.csdnimg.cn/192d9db2af594db5ad313cf3f5f5a7c7.png"
+                      alt="在这里插入图片描述"
+                ></p>
+</blockquote>
+<p><font color=blue> 到目前为止，你已经完成了 静态页面的配置</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>lottie动画在vue的使用</title>
+    <url>/2023/04/08/lottie/</url>
+    <content><![CDATA[<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="C:\Users\14533\AppData\Roaming\marktext\images\2023-04-08-22-27-30-image.png"
+                     
+                ></p>
+<h2 id="地址链接"><a href="#地址链接" class="headerlink" title="地址链接"></a>地址链接</h2><p><a class="link"   href="https://github.com/CCharlie-xiu/lottie-tag" >https://github.com/CCharlie-xiu/lottie-tag <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ol>
+<li>安装lottie-web</li>
+</ol>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line">npm install lottie-web</span><br></pre></td></tr></table></figure></div>
+
+<ol start="2">
+<li>lottie-web的基本用法</li>
+</ol>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> animation = lottie.<span class="title function_">loadAnimation</span>(&#123;</span><br><span class="line"> <span class="attr">container</span>: <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;domId&#x27;</span>), </span><br><span class="line"> <span class="attr">renderer</span>: <span class="string">&#x27;svg&#x27;</span>, </span><br><span class="line"> <span class="attr">loop</span>: <span class="literal">true</span>,</span><br><span class="line"> <span class="attr">autoplay</span>: <span class="literal">true</span>, <span class="comment">// 是否自动播放, 默认true</span></span><br><span class="line"> <span class="attr">animationData</span>: <span class="comment">// AE动画使用bodymovie导出为json数据 </span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line">animation.<span class="title function_">play</span>(); <span class="comment">// 播放，从当前帧开始播放</span></span><br><span class="line"></span><br><span class="line">animation.<span class="title function_">stop</span>(); <span class="comment">// 停止，并回到第0帧</span></span><br><span class="line"></span><br><span class="line">animation.<span class="title function_">pause</span>(); <span class="comment">// 暂停，并保持当前帧</span></span><br><span class="line"></span><br><span class="line">animation.<span class="title function_">goToAndStop</span>(value, isFrame); <span class="comment">// 跳到某时刻/帧并停止isFrame(默认false)指示value表示帧还是时间(毫秒)</span></span><br><span class="line"></span><br><span class="line">animation.<span class="title function_">goToAndPlay</span>(value, isFrame); <span class="comment">// 跳到某个时刻/帧并进行播放</span></span><br><span class="line"></span><br><span class="line">animation.<span class="title function_">goToAndStop</span>(<span class="number">30</span>, <span class="literal">true</span>); <span class="comment">// 跳转到第30帧并停止</span></span><br><span class="line"></span><br><span class="line">animation.<span class="title function_">goToAndPlay</span>(<span class="number">300</span>); <span class="comment">// 跳转到第300毫秒并播放</span></span><br><span class="line"></span><br><span class="line">animation.<span class="title function_">playSegments</span>(arr, forceFlag); <span class="comment">// arr可以包含两个数字或者两个数字组成的数组，forceFlag表示是否立即强制播放该片段</span></span><br><span class="line"></span><br><span class="line">animation.<span class="title function_">playSegments</span>([<span class="number">10</span>,<span class="number">20</span>], <span class="literal">false</span>); <span class="comment">// 播放完之前的片段，播放10-20帧</span></span><br><span class="line"></span><br><span class="line">animation.<span class="title function_">playSegments</span>([[<span class="number">0</span>,<span class="number">5</span>],[<span class="number">10</span>,<span class="number">18</span>]], <span class="literal">true</span>); <span class="comment">// 直接播放0-5帧和10-18帧</span></span><br><span class="line"></span><br><span class="line">animation.<span class="title function_">setSpeed</span>(speed); <span class="comment">// 设置播放速度，speed为1表示正常速度</span></span><br><span class="line"></span><br><span class="line">animation.<span class="title function_">setDirection</span>(direction); <span class="comment">// 设置播放方向，1表示正向播放，-1表示反向播放</span></span><br><span class="line"></span><br><span class="line">animation.<span class="title function_">destroy</span>(); <span class="comment">// 删除该动画，移除相应的元素标签等。</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+
+
+
+
+<h2 id="Lottie-网站"><a href="#Lottie-网站" class="headerlink" title="Lottie 网站"></a>Lottie 网站</h2><p><a class="link"   href="https://lottiefiles.com/" >https://lottiefiles.com/ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="C:\Users\14533\AppData\Roaming\marktext\images\2023-04-08-22-30-49-image.png"
+                     
+                ></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>微服务-SpringBoot</title>
+    <url>/2023/04/08/%E5%BE%AE%E6%9C%8D%E5%8A%A1/</url>
+    <content><![CDATA[<p><em>约定大于配置</em></p>
+<h1 id="微服务🛎️"><a href="#微服务🛎️" class="headerlink" title="微服务🛎️"></a>微服务🛎️</h1><p>MVC三层架构 MVVM微服务架构</p>
+<hr>
+<blockquote>
+<p>模块化 -&gt; http 通信 （rpc）</p>
+</blockquote>
+<p><code>高内聚 低耦合</code></p>
+<h1 id="SpringBoot"><a href="#SpringBoot" class="headerlink" title="SpringBoot"></a>SpringBoot</h1><h2 id="Spring-zip-安装"><a href="#Spring-zip-安装" class="headerlink" title="Spring .zip 安装"></a>Spring .zip 安装</h2><hr>
+<blockquote>
+<p><code>安装地址</code></p>
+<p><a class="link"   href="https://start.spring.io/" >https://start.spring.io/ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+</blockquote>
+<p>1.8JDK 配置8.0版本java</p>
+<blockquote>
+<p>按图片配置 zip压缩包</p>
+</blockquote>
+<p>产出springboot 压缩包 (generate)</p>
+<hr>
+<h2 id="Lombok-thymeleaf-web-插件导入"><a href="#Lombok-thymeleaf-web-插件导入" class="headerlink" title="Lombok thymeleaf web 插件导入"></a>Lombok thymeleaf web 插件导入</h2><blockquote>
+<p>官网导入三个依赖</p>
+</blockquote>
+<hr>
+<h2 id="pom-xml-解读"><a href="#pom-xml-解读" class="headerlink" title="pom.xml 解读"></a>pom.xml 解读</h2><hr>
+<blockquote>
+<p>继承依赖(父项目) <code>org.springframework.boot</code> 远程项目包</p>
+</blockquote>
+<div class="highlight-container" data-rel="Xml"><figure class="iseeu highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">parent</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-parent<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.7.5<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">relativePath</span>/&gt;</span> <span class="comment">&lt;!-- lookup parent from repository --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">parent</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+<p>项目依赖（dependencies）</p>
+<blockquote>
+<p>web 依赖 ： tomcat , dispatcherServlet, xml</p>
+<p>实现Http 接口</p>
+</blockquote>
+<div class="highlight-container" data-rel="Xml"><figure class="iseeu highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+<blockquote>
+<p>打包（jar）插件</p>
+</blockquote>
+<div class="highlight-container" data-rel="Xml"><figure class="iseeu highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+<h3 id="配置端口resources-x2F-application-properties"><a href="#配置端口resources-x2F-application-properties" class="headerlink" title="配置端口resources&#x2F;application.properties"></a>配置端口resources&#x2F;application.properties</h3><div class="highlight-container" data-rel="Properties"><figure class="iseeu highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="attr">server.port</span> = <span class="string">8081</span></span><br></pre></td></tr></table></figure></div>
+
+<hr>
+<h1 id="banner-txt-自制横幅"><a href="#banner-txt-自制横幅" class="headerlink" title="banner.txt(自制横幅)"></a>banner.txt(自制横幅)</h1><blockquote>
+<p>在 resources 目录下创建 <code>banner.txt</code></p>
+</blockquote>
+<p>    前往 <a class="link"   href="https://www.bootschool.net/ascii" >Spring Boot banner在线生成工具 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<blockquote>
+<p><a class="link"   href="https://www.bootschool.net/ascii" >Spring Boot banner在线生成工具，制作下载英文banner.txt，修改替换banner.txt文字实现自定义，个性化启动banner-bootschool.net <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> 这个网站自定义自己的banner</p>
+</blockquote>
+<hr>
+<h1 id="properties-后缀"><a href="#properties-后缀" class="headerlink" title=".properties 后缀"></a>.properties 后缀</h1><blockquote>
+<p>.properties 后缀文件皆为自定组件，自定配置，所以在引入自定义配置后，查找相关组件配置的配置版本和信息，搜索 .properties</p>
+</blockquote>
+<hr>
+<h1 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h1><h2 id="SpringBootConfiguration"><a href="#SpringBootConfiguration" class="headerlink" title="@SpringBootConfiguration"></a>@SpringBootConfiguration</h2><p><code>configuration 构造 配置</code></p>
+<table>
+<thead>
+<tr>
+<th>@SpringBootConfiguration</th>
+<th>SpringBoot配置</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>@Configuration</td>
+<td>spring配置类</td>
+</tr>
+<tr>
+<td>@Component</td>
+<td>组件</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>springboot在启动的时候，从类路径下&#x2F;META-INF&#x2F; spring.factories获取指定的</p>
+</blockquote>
+<hr>
+<h2 id="SpringBootApplication"><a href="#SpringBootApplication" class="headerlink" title="@SpringBootApplication"></a>@SpringBootApplication</h2><h2 id="run-方法的理解"><a href="#run-方法的理解" class="headerlink" title="run() 方法的理解"></a>run() 方法的理解</h2><blockquote>
+<p>SpringBootApplication 启动器</p>
+</blockquote>
+<ul>
+<li><p>constructor 构造</p>
+</li>
+<li><p>init (初始化) ·<code>run() 方法的理解</code></p>
+<ul>
+<li><p>推断应用类型是否为WEB</p>
+</li>
+<li><p>加载所有可用初始化配置</p>
+</li>
+<li><p>设置所有可用程序监听器</p>
+</li>
+<li><p>推断并设置main方法的定义类</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="Autowired"><a href="#Autowired" class="headerlink" title="@Autowired"></a>@Autowired</h2><h2 id="yaml-匹配"><a href="#yaml-匹配" class="headerlink" title="yaml 匹配"></a>yaml 匹配</h2><h3 id="yaml配置文件自定义随机值"><a href="#yaml配置文件自定义随机值" class="headerlink" title="yaml配置文件自定义随机值"></a>yaml配置文件自定义随机值</h3><div class="highlight-container" data-rel="Yaml"><figure class="iseeu highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">xiu:</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">hah$&#123;random.uuid&#125;</span></span><br><span class="line">    <span class="attr">age:</span> <span class="string">$&#123;random.int&#125;</span></span><br><span class="line">    <span class="attr">hello:</span> <span class="string">$&#123;xiu.world:world&#125;_xiu</span></span><br><span class="line">    <span class="attr">happy:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure></div>
+
+<p><code>hello: $&#123;xiu.world:world&#125;_xiu 表示如果xiu.world存在 则使用xiu.world 不存在用 冒号 （:）后面的值代替</code></p>
+<blockquote>
+<p>xiu 有参构造函数：</p>
+</blockquote>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="title function_">xiu</span><span class="params">(String name, Integer age, Boolean happy, String hello)</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>.name = name;</span><br><span class="line">    <span class="built_in">this</span>.age = age;</span><br><span class="line">    <span class="built_in">this</span>.happy = happy;</span><br><span class="line">    <span class="built_in">this</span>.hello = hello;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<blockquote>
+<p>它可以对类成员变量、方法及构造函数进行标注，完成自动装配的工作</p>
+</blockquote>
+<p><code>编写构造方法，toSting()</code></p>
+<h2 id="ConfigurationProperties-prefix-x3D-“xiu”"><a href="#ConfigurationProperties-prefix-x3D-“xiu”" class="headerlink" title="@ConfigurationProperties(prefix &#x3D; “xiu”)"></a>@ConfigurationProperties(prefix &#x3D; “xiu”)</h2><p><code>configurationProperties 注解绑定yaml</code></p>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Autowired</span></span><br><span class="line"><span class="keyword">private</span> xiu xu;</span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">contextLoads</span><span class="params">()</span> &#123;</span><br><span class="line">    System.out.println(xu);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="PropertySource"><a href="#PropertySource" class="headerlink" title="@PropertySource"></a>@PropertySource</h2><blockquote>
+<p>指定配置文件</p>
+<p>@PropertySource( value &#x3D; “classpath:application.properties”)</p>
+<p>.properties 后缀文件的用法</p>
+</blockquote>
+<hr>
+<h2 id="Validated"><a href="#Validated" class="headerlink" title="@Validated"></a>@Validated</h2><blockquote>
+<p>校验注解 （JSR303）</p>
+</blockquote>
+<ul>
+<li>@NotNull(message &#x3D; “id 不能为 null”)</li>
+</ul>
+<hr>
+<h1 id="SpringBoot-全局配置文件"><a href="#SpringBoot-全局配置文件" class="headerlink" title="SpringBoot 全局配置文件"></a>SpringBoot 全局配置文件</h1><h2 id="application"><a href="#application" class="headerlink" title="application"></a>application</h2><p>application 名称不能变</p>
+<ul>
+<li><p>程序可以同时存在 yaml 和 properties 两个配置文件</p>
+</li>
+<li><p>但必须都是 application</p>
+</li>
+<li><p>同时，优先级 yaml &gt; properties</p>
+</li>
+</ul>
+<p><code>两种表示形式:</code></p>
+<blockquote>
+<p>application.yaml</p>
+<p>application.properties</p>
+</blockquote>
+<ul>
+<li>properties:</li>
+</ul>
+<div class="highlight-container" data-rel="Properties"><figure class="iseeu highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="attr">server.port</span> = <span class="string">8081</span></span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>yaml:</li>
+</ul>
+<div class="highlight-container" data-rel="Yaml"><figure class="iseeu highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">server:</span></span><br><span class="line">    <span class="attr">port:</span> <span class="number">8081</span></span><br></pre></td></tr></table></figure></div>
+
+<h3 id="彩蛋（Easter-egg🥚）-YAML"><a href="#彩蛋（Easter-egg🥚）-YAML" class="headerlink" title="彩蛋（Easter egg🥚）: YAML"></a>彩蛋（Easter egg🥚）: YAML</h3><p>YAML是”YAML Ain’t a Markup Language”(YAML不是一种标记语言）的递归缩写。</p>
+<p>(YAML仍是一门配置语言)</p>
+<hr>
+<h1 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h1><h3 id="无参构造和有参构造，toString（），-getter-amp-setter"><a href="#无参构造和有参构造，toString（），-getter-amp-setter" class="headerlink" title="无参构造和有参构造，toString（）， getter&amp;setter"></a>无参构造和有参构造，toString（）， getter&amp;setter</h3><blockquote>
+<p>Alt + INSERT</p>
+</blockquote>
+<h3 id="搜索文件，库，类，方法"><a href="#搜索文件，库，类，方法" class="headerlink" title="搜索文件，库，类，方法"></a>搜索文件，库，类，方法</h3><blockquote>
+<p>Ctrl + Shift + F</p>
+</blockquote>
+<hr>
+<h1 id="双向绑定-名称"><a href="#双向绑定-名称" class="headerlink" title="双向绑定 名称"></a>双向绑定 名称</h1><blockquote>
+<p>first-name &#x3D;&#x3D;&#x3D; firstName</p>
+</blockquote>
+<hr>
+<h1 id="多文档模块（yaml）"><a href="#多文档模块（yaml）" class="headerlink" title="多文档模块（yaml）"></a>多文档模块（yaml）</h1><p><code>文章中的版本为 SpringBoot 2.7.0</code></p>
+<div class="highlight-container" data-rel="Yaml"><figure class="iseeu highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">     <span class="attr">profies:</span> <span class="string">test</span></span><br></pre></td></tr></table></figure></div>
+
+<blockquote>
+<p>替换为：</p>
+</blockquote>
+<div class="highlight-container" data-rel="Yaml"><figure class="iseeu highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">    <span class="attr">config:</span></span><br><span class="line">        <span class="attr">activate:</span></span><br><span class="line">            <span class="attr">on-profile:</span> <span class="string">test</span></span><br></pre></td></tr></table></figure></div>
+
+<blockquote>
+<p>paalication.yaml 文件下</p>
+<p>用 — (三条短横线)分割每一个模块</p>
+</blockquote>
+<hr>
+<h1 id="SpringBoot-Web"><a href="#SpringBoot-Web" class="headerlink" title="SpringBoot Web"></a>SpringBoot Web</h1><h2 id="静态资源"><a href="#静态资源" class="headerlink" title="静态资源"></a>静态资源</h2><table>
+<thead>
+<tr>
+<th>放置位置</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>classPath:&#x2F;</td>
+</tr>
+<tr>
+<td>resources</td>
+</tr>
+<tr>
+<td>static</td>
+</tr>
+<tr>
+<td>public</td>
+</tr>
+<tr>
+<td>优先级由上到下</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>表示 重写可以在 yaml &#x2F; properties 文件下 重写 @Override</p>
+</blockquote>
+<div class="highlight-container" data-rel="Properties"><figure class="iseeu highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="attr">spring.mvc.static-path-pattern</span>=<span class="string">/hello/, classpath:/xiu/</span></span><br></pre></td></tr></table></figure></div>
+
+<hr>
+<h2 id="页面跳转"><a href="#页面跳转" class="headerlink" title="页面跳转"></a>页面跳转</h2><hr>
+<h2 id="自定义图标"><a href="#自定义图标" class="headerlink" title="自定义图标"></a>自定义图标</h2><hr>
+<h2 id="模板引擎（Thymeleaf）"><a href="#模板引擎（Thymeleaf）" class="headerlink" title="模板引擎（Thymeleaf）"></a>模板引擎（Thymeleaf）</h2><blockquote>
+<p>Thymeleaf 类似 vue</p>
+<p>可以绑定任何元素</p>
+<p>表达方式 : th:元素名称</p>
+</blockquote>
+<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">th:text</span>=<span class="string">&quot;$&#123;msg&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+<hr>
+<h1 id="Lombok"><a href="#Lombok" class="headerlink" title="Lombok"></a>Lombok</h1><blockquote>
+<p>数据引用，有参，无参</p>
+<p>@Data</p>
+<p>@AllArgsConstructor</p>
+<p>@NoArgsConstructor</p>
+</blockquote>
+<hr>
+]]></content>
+  </entry>
+  <entry>
+    <title>【正则表达式】邮箱，数字正则表达式</title>
+    <url>/2023/04/08/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</url>
+    <content><![CDATA[<h1 id="数字"><a href="#数字" class="headerlink" title="数字"></a>数字</h1><div class="highlight-container" data-rel="Go"><figure class="iseeu highlight go"><table><tr><td class="code"><pre><span class="line">数字：^[<span class="number">0</span><span class="number">-9</span>]*$</span><br></pre></td></tr></table></figure></div>
+
+<h1 id="邮箱"><a href="#邮箱" class="headerlink" title="邮箱"></a>邮箱</h1><div class="highlight-container" data-rel="Go"><figure class="iseeu highlight go"><table><tr><td class="code"><pre><span class="line">Email地址：^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$</span><br></pre></td></tr></table></figure></div>
+
+<h1 id="更多30种正则表达式可观看"><a href="#更多30种正则表达式可观看" class="headerlink" title="更多30种正则表达式可观看"></a>更多30种正则表达式可观看</h1><hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
+<font color=red> ===>
+
+<p> <a class="link"   href="https://download.csdn.net/download/qq_50767141/85054394" >前往查看最常用正则表达式 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
+
+<h2 id="正则表达式："><a href="#正则表达式：" class="headerlink" title="正则表达式："></a>正则表达式：</h2><p><font color=blue>正则表达式(regular expression)<font color=pri>描述了一种字符串匹配的模式（pattern），可以用来检查一个串是否含有某种子串、将匹配的子串替换或者从某个串中取出符合某个条件的子串等。</p>
+<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
+
+<p>构造正则表达式的方法和创建数学表达式的方法一样。<br>也就是用多种元字符与运算符可以将小的表达式结合在一起来创建更大的表达式。<br>正则表达式的组件可以是单个的字符、字符集合、字符范围、字符间的选择或者所有这些组件的任意组合。</p>
+<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
+
+<p>正则表达式是由普通字符（例如字符 a 到 z）以及特殊字符（称为”元字符”）组成的文字模式。<br><font color=blue>模式描述在搜索文本时要匹配的一个或多个字符串。正则表达式作为一个模板，将某个字符模式与所搜索的字符串进行匹配。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>脚手架编写</title>
+    <url>/2023/04/08/%E8%84%9A%E6%89%8B%E6%9E%B6%E7%BC%96%E5%86%99/</url>
+    <content><![CDATA[<h1 id="🛎️脚手架编写"><a href="#🛎️脚手架编写" class="headerlink" title="🛎️脚手架编写"></a>🛎️脚手架编写</h1><hr>
+<blockquote>
+<p><strong>脚手架框架</strong>：</p>
+<ul>
+<li><p>bin</p>
+</li>
+<li><ul>
+<li><a class="link"   href="http://www.js/" >www.js <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+</ul>
+</li>
+<li><p>src</p>
+</li>
+<li><ul>
+<li><p>contant.js</p>
+</li>
+<li><p>create.js</p>
+</li>
+<li><p>main.js</p>
+</li>
+</ul>
+</li>
+<li><p>package-lock.json</p>
+</li>
+<li><p>package.json</p>
+</li>
+</ul>
+</blockquote>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://img-blog.csdnimg.cn/ad9211a59b424b94817ecfffda33f367.png"
+                      alt="在这里插入图片描述"
+                ></p>
+<hr>
+<h2 id="🛠️插件安装"><a href="#🛠️插件安装" class="headerlink" title="🛠️插件安装"></a>🛠️插件安装</h2><p>devDependencies &amp; dependencies</p>
+<table>
+<thead>
+<tr>
+<th>脚本名称</th>
+<th>脚本作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>commander</td>
+<td>读取版本，设定选项（option），开发命令行工具</td>
+</tr>
+<tr>
+<td>consolidate</td>
+<td>express中的模板引擎可以覆盖其他模板</td>
+</tr>
+<tr>
+<td>download-git-repo</td>
+<td>可以通过git的方式下载模板到本地</td>
+</tr>
+<tr>
+<td>ejs</td>
+<td>模板库,json生成html和consolidate配合使用</td>
+</tr>
+<tr>
+<td>inquirer</td>
+<td>命令行交互</td>
+</tr>
+<tr>
+<td>metalsmith</td>
+<td>批量处理模板</td>
+</tr>
+<tr>
+<td>ora</td>
+<td>优化加载等待的交互</td>
+</tr>
+<tr>
+<td>chalk</td>
+<td>美化终端</td>
+</tr>
+<tr>
+<td>ncp</td>
+<td>判断文件是否存在</td>
+</tr>
+<tr>
+<td>axios</td>
+<td>http库发送请求</td>
+</tr>
+</tbody></table>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://img-blog.csdnimg.cn/9c051e83c49b4a1ab8a4b633fc39e21f.png"
+                      alt="在这里插入图片描述"
+                ></p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line">npm i</span><br></pre></td></tr></table></figure></div>
+
+<hr>
+<h2 id="编写bin文件"><a href="#编写bin文件" class="headerlink" title="编写bin文件"></a>编写bin文件</h2><blockquote>
+<p>bin文件下创建 <a class="link"   href="http://www.js/" >www.js <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> 文件</p>
+</blockquote>
+<blockquote>
+<p>输入</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="meta">#! /usr/bin/env node</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">require</span>(<span class="string">&quot;../src/main.js&quot;</span>)</span><br></pre></td></tr></table></figure></div>
+</blockquote>
+<ul>
+<li>回到 package.json 添加如下启动项</li>
+</ul>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;bin&quot;</span>: &#123;</span><br><span class="line">  <span class="string">&quot;xiu&quot;</span>: <span class="string">&quot;./bin/www.js&quot;</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure></div>
+
+<hr>
+<h2 id="⭐编写src文件"><a href="#⭐编写src文件" class="headerlink" title="⭐编写src文件"></a>⭐编写src文件</h2><hr>
+<h3 id="🚀main-js"><a href="#🚀main-js" class="headerlink" title="🚀main.js"></a>🚀main.js</h3><blockquote>
+<p><mark>版本</mark>和<mark>命令行生成</mark>以及<mark>文件路径选择</mark>都在这里编写</p>
+</blockquote>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123;version&#125; = <span class="built_in">require</span>(<span class="string">&#x27;../package.json&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> program  = <span class="built_in">require</span>(<span class="string">&#x27;commander&#x27;</span>);</span><br></pre></td></tr></table></figure></div>
+
+<blockquote>
+<p>编写文件创建和帮助指令</p>
+</blockquote>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> mapActions = &#123;</span><br><span class="line">    <span class="attr">create</span>: &#123; </span><br><span class="line">        <span class="attr">alias</span>: <span class="string">&quot;c&quot;</span>,</span><br><span class="line">        <span class="attr">description</span>:<span class="string">&quot;create a project&quot;</span>,</span><br><span class="line">        <span class="attr">examples</span>:[<span class="string">&quot;xiu create &lt;project-name&gt;&quot;</span>]</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">config</span>: &#123; </span><br><span class="line">        <span class="attr">alias</span>:<span class="string">&quot;conf&quot;</span>,</span><br><span class="line">        <span class="attr">description</span>:<span class="string">&quot;config project variable&quot;</span>,</span><br><span class="line">        <span class="attr">examples</span>:[<span class="string">&quot;xiu config set&lt;k&gt;&lt;v&gt;&quot;</span>,<span class="string">&quot;xiu config get &lt;k&gt;&quot;</span>]</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">&quot;*&quot;</span>: &#123; </span><br><span class="line">        <span class="attr">alias</span>:<span class="string">&quot;&quot;</span>,</span><br><span class="line">        <span class="attr">description</span>:<span class="string">&quot;command not found&quot;</span>,</span><br><span class="line">        <span class="attr">examples</span>:[]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li><p>完成上一步操作后，我们需要逐步进行命令选择</p>
+</li>
+<li><p>需要使用 <mark>Reflect</mark> 中的 <mark>ownkeys</mark>进行每条命令的遍历</p>
+</li>
+<li><p>最后使用 <mark>forEach</mark>进行循环操作</p>
+</li>
+</ul>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="title class_">Reflect</span>.<span class="title function_">ownKeys</span>(mapActions).<span class="title function_">forEach</span>(<span class="function">(<span class="params">action</span>) =&gt;</span> &#123;</span><br><span class="line">    program</span><br><span class="line">        .<span class="title function_">command</span>(action)</span><br><span class="line">        .<span class="title function_">alias</span>(mapActions[action].<span class="property">alias</span>)</span><br><span class="line">        .<span class="title function_">description</span>(mapActions[action].<span class="property">description</span>)</span><br><span class="line">        .<span class="title function_">action</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">if</span>(action === <span class="string">&quot;*&quot;</span>) </span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(mapActions[action].<span class="property">description</span>) </span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="built_in">require</span>(path.<span class="title function_">resolve</span>(__dirname,action))(...process.<span class="property">argv</span>.<span class="title function_">slice</span>(<span class="number">3</span>));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></div>
+
+<blockquote>
+<p><mark>command </mark>：命令行（对应mapActions中的每一个动作）</p>
+<p><mark>alias </mark>：别称，也就是mapActions中的alias</p>
+<p><mark>description</mark>：同样对应mapActions中的description</p>
+<p><code>因为这边是对mapActions进行循环遍历，所以每一个在mapActions中的属性都需要遍历到</code></p>
+</blockquote>
+<ul>
+<li>最后一行的判断</li>
+</ul>
+<h4 id="help事件"><a href="#help事件" class="headerlink" title="help事件"></a>help事件</h4><div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line">program.<span class="title function_">on</span>(<span class="string">&quot;--help&quot;</span>,<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;\nExamples:&quot;</span>);</span><br><span class="line">    <span class="title class_">Reflect</span>.<span class="title function_">ownKeys</span>(mapActions).<span class="title function_">forEach</span>(<span class="function">(<span class="params">action</span>)=&gt;</span> &#123;</span><br><span class="line">        mapActions[action].<span class="property">examples</span>.<span class="title function_">forEach</span>(<span class="function">(<span class="params">example</span>)=&gt;</span> &#123;</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(example)</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li><p>执行help的时候输出mapActions和命令行自带的option</p>
+</li>
+<li><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://img-blog.csdnimg.cn/cc1782b097fe42dc8cd1db1c94ca3cd9.png"
+                      alt="在这里插入图片描述"
+                ></p>
+</li>
+</ul>
+<h4 id="版本显示"><a href="#版本显示" class="headerlink" title="版本显示"></a>版本显示</h4><div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line">program.<span class="title function_">version</span>(version).<span class="title function_">parse</span>(process.<span class="property">argv</span>);</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="main代码"><a href="#main代码" class="headerlink" title="main代码"></a>main代码</h4><div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;welcome xiu&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> &#123;version&#125; = <span class="built_in">require</span>(<span class="string">&#x27;../package.json&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> program  = <span class="built_in">require</span>(<span class="string">&#x27;commander&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> mapActions = &#123;</span><br><span class="line">    <span class="attr">create</span>: &#123; </span><br><span class="line">        <span class="attr">alias</span>: <span class="string">&quot;c&quot;</span>,</span><br><span class="line">        <span class="attr">description</span>:<span class="string">&quot;create a project&quot;</span>,</span><br><span class="line">        <span class="attr">examples</span>:[<span class="string">&quot;xiu create &lt;project-name&gt;&quot;</span>]</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">config</span>: &#123; </span><br><span class="line">        <span class="attr">alias</span>:<span class="string">&quot;conf&quot;</span>,</span><br><span class="line">        <span class="attr">description</span>:<span class="string">&quot;config project variable&quot;</span>,</span><br><span class="line">        <span class="attr">examples</span>:[<span class="string">&quot;xiu config set&lt;k&gt;&lt;v&gt;&quot;</span>,<span class="string">&quot;xiu config get &lt;k&gt;&quot;</span>]</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">&quot;*&quot;</span>: &#123; </span><br><span class="line">        <span class="attr">alias</span>:<span class="string">&quot;&quot;</span>,</span><br><span class="line">        <span class="attr">description</span>:<span class="string">&quot;command not found&quot;</span>,</span><br><span class="line">        <span class="attr">examples</span>:[]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="title class_">Reflect</span>.<span class="title function_">ownKeys</span>(mapActions).<span class="title function_">forEach</span>(<span class="function">(<span class="params">action</span>) =&gt;</span> &#123;</span><br><span class="line">    program</span><br><span class="line">        .<span class="title function_">command</span>(action)</span><br><span class="line">        .<span class="title function_">alias</span>(mapActions[action].<span class="property">alias</span>)</span><br><span class="line">        .<span class="title function_">description</span>(mapActions[action].<span class="property">description</span>)</span><br><span class="line">        .<span class="title function_">action</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">if</span>(action === <span class="string">&quot;*&quot;</span>) </span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(mapActions[action].<span class="property">description</span>) </span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="built_in">require</span>(path.<span class="title function_">resolve</span>(__dirname,action))(...process.<span class="property">argv</span>.<span class="title function_">slice</span>(<span class="number">3</span>));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// help event</span></span><br><span class="line">program.<span class="title function_">on</span>(<span class="string">&quot;--help&quot;</span>,<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;\nExamples:&quot;</span>);</span><br><span class="line">    <span class="title class_">Reflect</span>.<span class="title function_">ownKeys</span>(mapActions).<span class="title function_">forEach</span>(<span class="function">(<span class="params">action</span>)=&gt;</span> &#123;</span><br><span class="line">        mapActions[action].<span class="property">examples</span>.<span class="title function_">forEach</span>(<span class="function">(<span class="params">example</span>)=&gt;</span> &#123;</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(example)</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br><span class="line">program.<span class="title function_">version</span>(version).<span class="title function_">parse</span>(process.<span class="property">argv</span>);</span><br></pre></td></tr></table></figure></div>
+
+<hr>
+<h2 id="💡create-js"><a href="#💡create-js" class="headerlink" title="💡create.js"></a>💡create.js</h2><p><code>如果纯复刻，建议先去下面把 constant.js写了再回来</code></p>
+<blockquote>
+<p><mark>模板的选择</mark>，<mark>模板的复制</mark>，<mark>终端的选择</mark>和<mark>终端的样式</mark>都在这里实现</p>
+</blockquote>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> axios = <span class="built_in">require</span>(<span class="string">&#x27;axios&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> ora = <span class="built_in">require</span>(<span class="string">&#x27;ora&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> <span class="title class_">Inquirer</span> = <span class="built_in">require</span>(<span class="string">&#x27;inquirer&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>)</span><br><span class="line"><span class="comment">// 包装 </span></span><br><span class="line"><span class="keyword">const</span> &#123;promisify&#125; = <span class="built_in">require</span>(<span class="string">&#x27;util&#x27;</span>)</span><br><span class="line"><span class="keyword">let</span> downLoadGitRepo = <span class="built_in">require</span>(<span class="string">&#x27;download-git-repo&#x27;</span>)</span><br><span class="line">downLoadGitRepo = <span class="title function_">promisify</span>(downLoadGitRepo) <span class="comment">// 装成ES6</span></span><br><span class="line"><span class="comment">// 复制</span></span><br><span class="line"><span class="keyword">let</span> ncp = <span class="built_in">require</span>(<span class="string">&#x27;ncp&#x27;</span>)</span><br><span class="line">ncp = <span class="title function_">promisify</span>(ncp)</span><br><span class="line"><span class="comment">// 复杂选择</span></span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> metalSmith = <span class="built_in">require</span>(<span class="string">&#x27;metalsmith&#x27;</span>)</span><br><span class="line"><span class="keyword">let</span> &#123;render&#125; = <span class="built_in">require</span>(<span class="string">&#x27;consolidate&#x27;</span>).<span class="property">ejs</span></span><br><span class="line">render = <span class="title function_">promisify</span>(render)</span><br><span class="line"><span class="keyword">const</span> &#123;downloadDirectory&#125; = <span class="built_in">require</span>(<span class="string">&#x27;./constant&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> download = <span class="built_in">require</span>(<span class="string">&#x27;download-git-repo&#x27;</span>)</span><br><span class="line"><span class="comment">// 美化终端</span></span><br><span class="line"><span class="keyword">const</span> chalk = <span class="built_in">require</span>(<span class="string">&#x27;chalk&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="获取仓库信息"><a href="#获取仓库信息" class="headerlink" title="获取仓库信息"></a>获取仓库信息</h3><div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 获取仓库信息</span></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">fetchRepoList</span> = <span class="keyword">async</span>(<span class="params"></span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123;data&#125; = <span class="keyword">await</span> axios.<span class="title function_">get</span>(<span class="string">&quot;/*请求地址*/ https://api/orgs/repos&quot;</span>)</span><br><span class="line">    <span class="keyword">return</span> data</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="抓取版本列表"><a href="#抓取版本列表" class="headerlink" title="抓取版本列表"></a>抓取版本列表</h3><div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 抓取版本（tag）列表</span></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">fetchTagList</span> = <span class="keyword">async</span>(<span class="params">repo</span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123;data&#125; = <span class="keyword">await</span> axios.<span class="title function_">get</span>(<span class="string">&quot;/*请求地址*/&quot;</span> <span class="string">`https://api/orgs/<span class="subst">$&#123;repo&#125;</span>/tags`</span>)</span><br><span class="line">    <span class="keyword">return</span> data</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="下载项目"><a href="#下载项目" class="headerlink" title="下载项目"></a>下载项目</h3><div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">downLoad</span> = <span class="keyword">async</span>(<span class="params">repo, tag</span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">let</span> api = <span class="string">`xiu/<span class="subst">$&#123;repo&#125;</span>`</span></span><br><span class="line">    <span class="keyword">if</span>(tag) &#123;</span><br><span class="line">        api += <span class="string">`#<span class="subst">$&#123;tag&#125;</span>`</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">const</span> tempdest = <span class="string">`<span class="subst">$&#123;downloadDirectory&#125;</span>/<span class="subst">$&#123;repo&#125;</span>`</span></span><br><span class="line">    <span class="keyword">await</span> <span class="title function_">downLoadGitRepo</span>(api,tempdest)</span><br><span class="line">    <span class="keyword">return</span> tempdest</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<blockquote>
+<p>repo 就是仓库下的模板名称</p>
+<p>tag 就是每个模板的版本号</p>
+</blockquote>
+<h3 id="编写加载项"><a href="#编写加载项" class="headerlink" title="编写加载项"></a>编写加载项</h3><blockquote>
+<p>再完成上面几步之前会有一个加载的过程，重复的加载我们可以封装来完成</p>
+</blockquote>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">waitFnLoading</span> = (<span class="params">fn,message</span>) =&gt; <span class="title function_">async</span>(...args) =&gt; &#123;</span><br><span class="line">    <span class="comment">// loading 加载</span></span><br><span class="line">    <span class="keyword">const</span> spinner = <span class="title function_">ora</span>(message)</span><br><span class="line">    spinner.<span class="title function_">start</span>()</span><br><span class="line">    <span class="keyword">let</span> repos = <span class="keyword">await</span> <span class="title function_">fn</span>(...args)</span><br><span class="line">    spinner.<span class="title function_">succeed</span>();</span><br><span class="line">    <span class="keyword">return</span> repos</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<blockquote>
+<p>这里有两个函数体变量</p>
+<p>(fn,message) ， async(…args)</p>
+<p>前者用来接收执行的函数和发出的提示</p>
+<p>后者用来对执行函数自带参数进行调用</p>
+</blockquote>
+<ul>
+<li>接下来要做的就是导出下载模块</li>
+</ul>
+<h3 id="导出下载模块"><a href="#导出下载模块" class="headerlink" title="导出下载模块"></a>导出下载模块</h3><h4 id="交互选择"><a href="#交互选择" class="headerlink" title="交互选择"></a>交互选择</h4><div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> repos = <span class="keyword">await</span> <span class="title function_">waitFnLoading</span>(fetchRepoList,<span class="string">&#x27;fetch template...&#x27;</span>)()</span><br><span class="line"><span class="comment">// 交互选择</span></span><br><span class="line">repos = repos.<span class="title function_">map</span>(<span class="function"><span class="params">item</span> =&gt;</span> item.<span class="property">name</span>)</span><br><span class="line"><span class="keyword">const</span> &#123;repo&#125; = <span class="keyword">await</span> <span class="title class_">Inquirer</span>.<span class="title function_">prompt</span>(&#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;repo&#x27;</span>,</span><br><span class="line">    <span class="attr">type</span>: <span class="string">&#x27;list&#x27;</span>,</span><br><span class="line">    <span class="attr">message</span>: <span class="string">&#x27;please choise a template&#x27;</span>,</span><br><span class="line">    choices : repos, <span class="comment">// 选择列表</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="获取对应的版本号"><a href="#获取对应的版本号" class="headerlink" title="获取对应的版本号"></a>获取对应的版本号</h4><div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> tags = <span class="keyword">await</span> <span class="title function_">waitFnLoading</span>(fetchTagList,<span class="string">&#x27;fetch template tag...&#x27;</span>)(repo)</span><br><span class="line">    tags = tags.<span class="title function_">map</span>(<span class="function">(<span class="params">item</span>) =&gt;</span> item.<span class="property">name</span>)</span><br><span class="line">    <span class="keyword">const</span> &#123;tag&#125; = <span class="keyword">await</span> <span class="title class_">Inquirer</span>.<span class="title function_">prompt</span>(&#123;</span><br><span class="line">        <span class="attr">name</span>: <span class="string">&#x27;repo&#x27;</span>,</span><br><span class="line">        <span class="attr">type</span>: <span class="string">&#x27;list&#x27;</span>,</span><br><span class="line">        <span class="attr">message</span>: <span class="string">&#x27;please choise a tags for template&#x27;</span>,</span><br><span class="line">        choices : tags, <span class="comment">// 选择列表</span></span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure></div>
+
+<blockquote>
+<p>交互选择 和 获取对应的版本号 本质上没有差别</p>
+<p>都是通过 inquirer 交互页面查看每个版本进行选择</p>
+<p>不同的地方是：</p>
+<p>异步调用的 加载项不同：</p>
+<pre><code>let repos = await waitFnLoading(fetchRepoList,&#39;fetch template...&#39;)&lt;mark&gt;()&lt;/mark&gt;
+
+let tags = await waitFnLoading(fetchTagList,&#39;fetch template tag...&#39;)&lt;mark&gt;(repo)&lt;/mark&gt;
+</code></pre>
+</blockquote>
+<ul>
+<li><p>下载的项目首先是临时存放到本地，之后再对存放的内容的文件名称和当前路径下的文件匹配有无重复最后实现模板复制到当前路径下。</p>
+</li>
+<li><p>在一些简单模板下没有<mark>ask.js</mark> 但是在绝大部分的复杂模板下有 ask.js文件，这就需要我们对ask.js文件进行访问和重编写</p>
+</li>
+</ul>
+<blockquote>
+<p>这里需要使用到 metalSmith 对模板的内容进行批量处理</p>
+</blockquote>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 下载项目 返回临时的存放目录</span></span><br><span class="line">   <span class="keyword">const</span> result = <span class="keyword">await</span> <span class="title function_">waitFnLoading</span>(downLoad,<span class="string">&#x27;downloading...&#x27;</span>)(repo,tag)</span><br><span class="line">   <span class="keyword">if</span>(!fs.<span class="title function_">existsSync</span>(path.<span class="title function_">join</span>(result,<span class="string">&#x27;ask.js&#x27;</span>))) &#123;</span><br><span class="line">       <span class="keyword">await</span> <span class="title function_">ncp</span>(result,path.<span class="title function_">resolve</span>(proname))  </span><br><span class="line">   &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">       <span class="comment">// 复杂模板需要选择</span></span><br><span class="line">       <span class="keyword">await</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve,reject</span>) =&gt;</span> &#123;</span><br><span class="line">           <span class="title function_">metalSmith</span>(__dirname)</span><br><span class="line">               .<span class="title function_">source</span>(result)</span><br><span class="line">               .<span class="title function_">destination</span>(path.<span class="title function_">resolve</span>(proname))</span><br><span class="line">               .<span class="title function_">use</span>(<span class="title function_">async</span>(files,metal,done) =&gt; &#123;</span><br><span class="line">                   <span class="comment">// files 现在就是所有的文件</span></span><br><span class="line">                   <span class="keyword">const</span> args = <span class="built_in">require</span>(path.<span class="title function_">join</span>(result,<span class="string">&#x27;ask.js&#x27;</span>))</span><br><span class="line">                   <span class="comment">// 选择</span></span><br><span class="line">                   <span class="keyword">const</span> obj = <span class="keyword">await</span> <span class="title class_">Inquirer</span>.<span class="title function_">prompt</span>(args)</span><br><span class="line">                   <span class="keyword">const</span> meta = metal.<span class="title function_">metadata</span>()</span><br><span class="line">                   <span class="title class_">Object</span>.<span class="title function_">assign</span>(meta,obj)</span><br><span class="line">                   <span class="keyword">delete</span> files[<span class="string">&quot;ask.js&quot;</span>]</span><br><span class="line">                   <span class="title function_">done</span>()</span><br><span class="line">               &#125;)</span><br><span class="line">               .<span class="title function_">use</span>(<span class="function">(<span class="params">files,metal,done</span>)=&gt;</span>&#123;</span><br><span class="line">                   <span class="keyword">const</span> obj = metal.<span class="title function_">metadata</span>()</span><br><span class="line">                   <span class="title class_">Reflect</span>.<span class="title function_">ownKeys</span>(files).<span class="title function_">forEach</span>(<span class="title function_">async</span>(file)=&gt;&#123;</span><br><span class="line">                       <span class="keyword">if</span>(file.<span class="title function_">includes</span>(<span class="string">&quot;js&quot;</span>)|| file.<span class="title function_">includes</span>(<span class="string">&quot;json&quot;</span>)) &#123;</span><br><span class="line">                           <span class="keyword">let</span> content = files[file].<span class="property">contents</span>.<span class="title function_">toString</span>()</span><br><span class="line">                           <span class="keyword">if</span>(content.<span class="title function_">includes</span>(<span class="string">&quot;&lt;%&quot;</span>)) &#123;</span><br><span class="line">                               content = <span class="keyword">await</span> <span class="title function_">render</span>(content, obj)</span><br><span class="line">                               files[file].<span class="property">contents</span> = <span class="title class_">Buffer</span>.<span class="title function_">from</span>(content) <span class="comment">// 渲染</span></span><br><span class="line">                           &#125;</span><br><span class="line">                       &#125;</span><br><span class="line">                   &#125;)</span><br><span class="line">                   <span class="title function_">done</span>()</span><br><span class="line">               &#125;).<span class="title function_">build</span>(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">                   <span class="keyword">if</span>(err) &#123;</span><br><span class="line">                       <span class="title function_">reject</span>()</span><br><span class="line">                   &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                       <span class="title function_">resolve</span>()</span><br><span class="line">                   &#125;</span><br><span class="line">               &#125;)</span><br><span class="line">       &#125;)</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>done() 相当于 node.js的中间件 next()</li>
+</ul>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> result = <span class="keyword">await</span> <span class="title function_">waitFnLoading</span>(downLoad,<span class="string">&#x27;downloading...&#x27;</span>)(repo,tag)</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>这一行代码获取到的result 就是对应模板和版本号之后的结果</li>
+</ul>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(!fs.<span class="title function_">existsSync</span>(path.<span class="title function_">join</span>(result,<span class="string">&#x27;ask.js&#x27;</span>))) &#123;</span><br><span class="line">        <span class="keyword">await</span> <span class="title function_">ncp</span>(result,path.<span class="title function_">resolve</span>(proname))  </span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;&#125;</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li><p>这里的 if..else.. 是对文件中是否存在 ask.js 进行判断</p>
+</li>
+<li><p>有就是复杂模板 需要重编写</p>
+</li>
+</ul>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="title function_">metalSmith</span>(__dirname)</span><br><span class="line">    .<span class="title function_">source</span>(result)</span><br><span class="line">    .<span class="title function_">destination</span>(path.<span class="title function_">resolve</span>(proname))</span><br><span class="line">    .<span class="title function_">use</span>(<span class="title function_">async</span>(files,metal,done) =&gt; &#123;</span><br><span class="line">        <span class="comment">// files 现在就是所有的文件</span></span><br><span class="line">        <span class="keyword">const</span> args = <span class="built_in">require</span>(path.<span class="title function_">join</span>(result,<span class="string">&#x27;ask.js&#x27;</span>))</span><br><span class="line">        <span class="comment">// 选择</span></span><br><span class="line">        <span class="keyword">const</span> obj = <span class="keyword">await</span> <span class="title class_">Inquirer</span>.<span class="title function_">prompt</span>(args)</span><br><span class="line">        <span class="keyword">const</span> meta = metal.<span class="title function_">metadata</span>()</span><br><span class="line">        <span class="title class_">Object</span>.<span class="title function_">assign</span>(meta,obj)</span><br><span class="line">        <span class="keyword">delete</span> files[<span class="string">&quot;ask.js&quot;</span>]</span><br><span class="line">        <span class="title function_">done</span>()</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>这一处代码就是对模板下的所有文件匹配找到ask.js然后遍历执行里面所有的问题最后删除 delete files[“ask.js”]</li>
+</ul>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line">.<span class="title function_">use</span>(<span class="function">(<span class="params">files,metal,done</span>)=&gt;</span>&#123;</span><br><span class="line">                    <span class="keyword">const</span> obj = metal.<span class="title function_">metadata</span>()</span><br><span class="line">                    <span class="title class_">Reflect</span>.<span class="title function_">ownKeys</span>(files).<span class="title function_">forEach</span>(<span class="title function_">async</span>(file)=&gt;&#123;</span><br><span class="line">                        <span class="keyword">if</span>(file.<span class="title function_">includes</span>(<span class="string">&quot;js&quot;</span>)|| file.<span class="title function_">includes</span>(<span class="string">&quot;json&quot;</span>)) &#123;</span><br><span class="line">                            <span class="keyword">let</span> content = files[file].<span class="property">contents</span>.<span class="title function_">toString</span>()</span><br><span class="line">                            <span class="keyword">if</span>(content.<span class="title function_">includes</span>(<span class="string">&quot;&lt;%&quot;</span>)) &#123;</span><br><span class="line">                                content = <span class="keyword">await</span> <span class="title function_">render</span>(content, obj)</span><br><span class="line">                                files[file].<span class="property">contents</span> = <span class="title class_">Buffer</span>.<span class="title function_">from</span>(content) <span class="comment">// 渲染</span></span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;)</span><br><span class="line">                    <span class="title function_">done</span>()</span><br><span class="line">                &#125;)</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li><p>使用 metalSmith下的use 对刚刚遍历执行的问题中找到以‘&lt;%’开头的选项就是要用户选择或是填写的</p>
+</li>
+<li><p>这里说明一下，前面删除的 ask.js 为什么这里还可以访问？</p>
+</li>
+<li><p>原因在于同样都是中间件，中间件之间是可以互相访问变量内容的，所以删除的ask.js在use里同样算是变量未删除。</p>
+</li>
+</ul>
+<h2 id="成功退出"><a href="#成功退出" class="headerlink" title="成功退出"></a>成功退出</h2><blockquote>
+<p>没什么好说的，直接复制改改就好了</p>
+</blockquote>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`</span></span><br><span class="line"><span class="string"><span class="subst">$&#123;chalk.green(<span class="string">&#x27;thanks to use my CLI&#x27;</span>)&#125;</span></span></span><br><span class="line"><span class="string"><span class="subst">$&#123;chalk.white.bold.bgBlue(<span class="string">&#x27;success download&#x27;</span>)&#125;</span></span></span><br><span class="line"><span class="string">----------------------------------</span></span><br><span class="line"><span class="string">⭕ <span class="subst">$&#123;chalk.red(<span class="string">&#x27;version of this&#x27;</span>)&#125;</span></span></span><br><span class="line"><span class="string">⭐ <span class="subst">$&#123;chalk.white(repo,tag)&#125;</span></span></span><br><span class="line"><span class="string">⭐ <span class="subst">$&#123;chalk.white(<span class="string">&#x27;buy me a coofee&#x27;</span>)&#125;</span></span></span><br><span class="line"><span class="string">design by <span class="subst">$&#123;chalk.bgBlue.yellow(<span class="string">&#x27;wuchanghua&#x27;</span>)&#125;</span>™️</span></span><br><span class="line"><span class="string">----------------------------------</span></span><br><span class="line"><span class="string"><span class="subst">$&#123;chalk.bgWhite.blue(<span class="string">&#x27;如果你足够充满智慧，加入我，和我一起创造 QQ：1453346832 Email: 1453346832@qq.com&#x27;</span>)&#125;</span></span></span><br><span class="line"><span class="string"><span class="subst">$&#123;chalk.green(<span class="string">&#x27;Finish to 100%&#x27;</span>)&#125;</span></span></span><br><span class="line"><span class="string"><span class="subst">$&#123;chalk.green(<span class="string">&#x27;Welcome&#x27;</span>)&#125;</span></span></span><br><span class="line"><span class="string">`</span>)</span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://img-blog.csdnimg.cn/bc234e2e4eec43debcf531cb69d59d57.png"
+                      alt="在这里插入图片描述"
+                ></p>
+<h2 id="create代码"><a href="#create代码" class="headerlink" title="create代码"></a>create代码</h2><div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> axios = <span class="built_in">require</span>(<span class="string">&#x27;axios&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> ora = <span class="built_in">require</span>(<span class="string">&#x27;ora&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> <span class="title class_">Inquirer</span> = <span class="built_in">require</span>(<span class="string">&#x27;inquirer&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>)</span><br><span class="line"><span class="comment">// 包装 </span></span><br><span class="line"><span class="keyword">const</span> &#123;promisify&#125; = <span class="built_in">require</span>(<span class="string">&#x27;util&#x27;</span>)</span><br><span class="line"><span class="keyword">let</span> downLoadGitRepo = <span class="built_in">require</span>(<span class="string">&#x27;download-git-repo&#x27;</span>)</span><br><span class="line">downLoadGitRepo = <span class="title function_">promisify</span>(downLoadGitRepo) <span class="comment">// 装成ES6</span></span><br><span class="line"><span class="comment">// 复制</span></span><br><span class="line"><span class="keyword">let</span> ncp = <span class="built_in">require</span>(<span class="string">&#x27;ncp&#x27;</span>)</span><br><span class="line">ncp = <span class="title function_">promisify</span>(ncp)</span><br><span class="line"><span class="comment">// 复杂选择</span></span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> metalSmith = <span class="built_in">require</span>(<span class="string">&#x27;metalsmith&#x27;</span>)</span><br><span class="line"><span class="keyword">let</span> &#123;render&#125; = <span class="built_in">require</span>(<span class="string">&#x27;consolidate&#x27;</span>).<span class="property">ejs</span></span><br><span class="line">render = <span class="title function_">promisify</span>(render)</span><br><span class="line"><span class="keyword">const</span> &#123;downloadDirectory&#125; = <span class="built_in">require</span>(<span class="string">&#x27;./constant&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> download = <span class="built_in">require</span>(<span class="string">&#x27;download-git-repo&#x27;</span>)</span><br><span class="line"><span class="comment">// 美化终端</span></span><br><span class="line"><span class="keyword">const</span> chalk = <span class="built_in">require</span>(<span class="string">&#x27;chalk&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取仓库信息</span></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">fetchRepoList</span> = <span class="keyword">async</span>(<span class="params"></span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123;data&#125; = <span class="keyword">await</span> axios.<span class="title function_">get</span>(<span class="string">&quot;/*请求地址*/ https://api/orgs/repos&quot;</span>)</span><br><span class="line">    <span class="keyword">return</span> data</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 抓取版本（tag）列表</span></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">fetchTagList</span> = <span class="keyword">async</span>(<span class="params">repo</span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123;data&#125; = <span class="keyword">await</span> axios.<span class="title function_">get</span>(<span class="string">&quot;/*请求地址*/&quot;</span> <span class="string">`https://api/orgs/<span class="subst">$&#123;repo&#125;</span>/tags`</span>)</span><br><span class="line">    <span class="keyword">return</span> data</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 下载项目</span></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">downLoad</span> = <span class="keyword">async</span>(<span class="params">repo, tag</span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">let</span> api = <span class="string">`xiu/<span class="subst">$&#123;repo&#125;</span>`</span></span><br><span class="line">    <span class="keyword">if</span>(tag) &#123;</span><br><span class="line">        api += <span class="string">`#<span class="subst">$&#123;tag&#125;</span>`</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">const</span> tempdest = <span class="string">`<span class="subst">$&#123;downloadDirectory&#125;</span>/<span class="subst">$&#123;repo&#125;</span>`</span></span><br><span class="line">    <span class="keyword">await</span> <span class="title function_">downLoadGitRepo</span>(api,tempdest)</span><br><span class="line">    <span class="keyword">return</span> tempdest</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> <span class="title function_">waitFnLoading</span> = (<span class="params">fn,message</span>) =&gt; <span class="title function_">async</span>(...args) =&gt; &#123;</span><br><span class="line">    <span class="comment">// loading 加载</span></span><br><span class="line">    <span class="keyword">const</span> spinner = <span class="title function_">ora</span>(message)</span><br><span class="line">    spinner.<span class="title function_">start</span>()</span><br><span class="line">    <span class="keyword">let</span> repos = <span class="keyword">await</span> <span class="title function_">fn</span>(...args)</span><br><span class="line">    spinner.<span class="title function_">succeed</span>();</span><br><span class="line">    <span class="keyword">return</span> repos</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = <span class="title function_">async</span>(proname) =&gt; &#123;</span><br><span class="line">    <span class="keyword">let</span> repos = <span class="keyword">await</span> <span class="title function_">waitFnLoading</span>(fetchRepoList,<span class="string">&#x27;fetch template...&#x27;</span>)()</span><br><span class="line">    <span class="comment">// 交互选择</span></span><br><span class="line">    repos = repos.<span class="title function_">map</span>(<span class="function"><span class="params">item</span> =&gt;</span> item.<span class="property">name</span>)</span><br><span class="line">    <span class="keyword">const</span> &#123;repo&#125; = <span class="keyword">await</span> <span class="title class_">Inquirer</span>.<span class="title function_">prompt</span>(&#123;</span><br><span class="line">        <span class="attr">name</span>: <span class="string">&#x27;repo&#x27;</span>,</span><br><span class="line">        <span class="attr">type</span>: <span class="string">&#x27;list&#x27;</span>,</span><br><span class="line">        <span class="attr">message</span>: <span class="string">&#x27;please choise a template&#x27;</span>,</span><br><span class="line">        choices : repos, <span class="comment">// 选择列表</span></span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="comment">// 获取对应的版本号</span></span><br><span class="line">    <span class="keyword">let</span> tags = <span class="keyword">await</span> <span class="title function_">waitFnLoading</span>(fetchTagList,<span class="string">&#x27;fetch template tag...&#x27;</span>)(repo)</span><br><span class="line">    tags = tags.<span class="title function_">map</span>(<span class="function">(<span class="params">item</span>) =&gt;</span> item.<span class="property">name</span>)</span><br><span class="line">    <span class="keyword">const</span> &#123;tag&#125; = <span class="keyword">await</span> <span class="title class_">Inquirer</span>.<span class="title function_">prompt</span>(&#123;</span><br><span class="line">        <span class="attr">name</span>: <span class="string">&#x27;repo&#x27;</span>,</span><br><span class="line">        <span class="attr">type</span>: <span class="string">&#x27;list&#x27;</span>,</span><br><span class="line">        <span class="attr">message</span>: <span class="string">&#x27;please choise a tags for template&#x27;</span>,</span><br><span class="line">        choices : tags, <span class="comment">// 选择列表</span></span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="comment">// 下载项目 返回临时的存放目录</span></span><br><span class="line">    <span class="keyword">const</span> result = <span class="keyword">await</span> <span class="title function_">waitFnLoading</span>(downLoad,<span class="string">&#x27;downloading...&#x27;</span>)(repo,tag)</span><br><span class="line">    <span class="keyword">if</span>(!fs.<span class="title function_">existsSync</span>(path.<span class="title function_">join</span>(result,<span class="string">&#x27;ask.js&#x27;</span>))) &#123;</span><br><span class="line">        <span class="keyword">await</span> <span class="title function_">ncp</span>(result,path.<span class="title function_">resolve</span>(proname))  </span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">// 复杂模板需要选择</span></span><br><span class="line">        <span class="keyword">await</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve,reject</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="title function_">metalSmith</span>(__dirname)</span><br><span class="line">                .<span class="title function_">source</span>(result)</span><br><span class="line">                .<span class="title function_">destination</span>(path.<span class="title function_">resolve</span>(proname))</span><br><span class="line">                .<span class="title function_">use</span>(<span class="title function_">async</span>(files,metal,done) =&gt; &#123;</span><br><span class="line">                    <span class="comment">// files 现在就是所有的文件</span></span><br><span class="line">                    <span class="keyword">const</span> args = <span class="built_in">require</span>(path.<span class="title function_">join</span>(result,<span class="string">&#x27;ask.js&#x27;</span>))</span><br><span class="line">                    <span class="comment">// 选择</span></span><br><span class="line">                    <span class="keyword">const</span> obj = <span class="keyword">await</span> <span class="title class_">Inquirer</span>.<span class="title function_">prompt</span>(args)</span><br><span class="line">                    <span class="keyword">const</span> meta = metal.<span class="title function_">metadata</span>()</span><br><span class="line">                    <span class="title class_">Object</span>.<span class="title function_">assign</span>(meta,obj)</span><br><span class="line">                    <span class="keyword">delete</span> files[<span class="string">&quot;ask.js&quot;</span>]</span><br><span class="line">                    <span class="title function_">done</span>()</span><br><span class="line">                &#125;)</span><br><span class="line">                .<span class="title function_">use</span>(<span class="function">(<span class="params">files,metal,done</span>)=&gt;</span>&#123;</span><br><span class="line">                    <span class="keyword">const</span> obj = metal.<span class="title function_">metadata</span>()</span><br><span class="line">                    <span class="title class_">Reflect</span>.<span class="title function_">ownKeys</span>(files).<span class="title function_">forEach</span>(<span class="title function_">async</span>(file)=&gt;&#123;</span><br><span class="line">                        <span class="keyword">if</span>(file.<span class="title function_">includes</span>(<span class="string">&quot;js&quot;</span>)|| file.<span class="title function_">includes</span>(<span class="string">&quot;json&quot;</span>)) &#123;</span><br><span class="line">                            <span class="keyword">let</span> content = files[file].<span class="property">contents</span>.<span class="title function_">toString</span>()</span><br><span class="line">                            <span class="keyword">if</span>(content.<span class="title function_">includes</span>(<span class="string">&quot;&lt;%&quot;</span>)) &#123;</span><br><span class="line">                                content = <span class="keyword">await</span> <span class="title function_">render</span>(content, obj)</span><br><span class="line">                                files[file].<span class="property">contents</span> = <span class="title class_">Buffer</span>.<span class="title function_">from</span>(content) <span class="comment">// 渲染</span></span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;)</span><br><span class="line">                    <span class="title function_">done</span>()</span><br><span class="line">                &#125;).<span class="title function_">build</span>(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">                    <span class="keyword">if</span>(err) &#123;</span><br><span class="line">                        <span class="title function_">reject</span>()</span><br><span class="line">                    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                        <span class="title function_">resolve</span>()</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;)</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`</span></span><br><span class="line"><span class="string"><span class="subst">$&#123;chalk.green(<span class="string">&#x27;thanks to use my CLI&#x27;</span>)&#125;</span></span></span><br><span class="line"><span class="string"><span class="subst">$&#123;chalk.white.bold.bgBlue(<span class="string">&#x27;success download&#x27;</span>)&#125;</span></span></span><br><span class="line"><span class="string">----------------------------------</span></span><br><span class="line"><span class="string">⭕ <span class="subst">$&#123;chalk.red(<span class="string">&#x27;version of this&#x27;</span>)&#125;</span></span></span><br><span class="line"><span class="string">⭐ <span class="subst">$&#123;chalk.white(repo,tag)&#125;</span></span></span><br><span class="line"><span class="string">⭐ <span class="subst">$&#123;chalk.white(<span class="string">&#x27;buy me a coofee&#x27;</span>)&#125;</span></span></span><br><span class="line"><span class="string">design by <span class="subst">$&#123;chalk.bgBlue.yellow(<span class="string">&#x27;wuchanghua&#x27;</span>)&#125;</span>™️</span></span><br><span class="line"><span class="string">----------------------------------</span></span><br><span class="line"><span class="string"><span class="subst">$&#123;chalk.bgWhite.blue(<span class="string">&#x27;如果你足够充满智慧，加入我，和我一起创造 QQ：1453346832 Email: 1453346832@qq.com&#x27;</span>)&#125;</span></span></span><br><span class="line"><span class="string"><span class="subst">$&#123;chalk.green(<span class="string">&#x27;Finish to 100%&#x27;</span>)&#125;</span></span></span><br><span class="line"><span class="string"><span class="subst">$&#123;chalk.green(<span class="string">&#x27;Welcome&#x27;</span>)&#125;</span></span></span><br><span class="line"><span class="string">`</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<hr>
+<h1 id="💡constant-js"><a href="#💡constant-js" class="headerlink" title="💡constant.js"></a>💡constant.js</h1><ul>
+<li><p>在create中用到的地址下载，你会发现无法复刻到本地原因在于 电脑系统版本不同，临时文件存放路径不同</p>
+</li>
+<li><p>所以这里可以单独对版本进行判断</p>
+</li>
+</ul>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> downloadDirectory = <span class="string">`<span class="subst">$&#123;process.env[process.platform === <span class="string">&#x27;darwin&#x27;</span> ? <span class="string">&#x27;Home&#x27;</span> : <span class="string">&#x27;USERPROFILE&#x27;</span>]&#125;</span>/.template`</span></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">    downloadDirectory</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>如果是 ‘darwin’ 那就是 mac 如果不是 其他的都是Windows</li>
+</ul>
+<hr>
+<h1 id="🎈完结"><a href="#🎈完结" class="headerlink" title="🎈完结"></a>🎈完结</h1><p>祝福你也可以完成自己的脚手架</p>
 ]]></content>
   </entry>
 </search>

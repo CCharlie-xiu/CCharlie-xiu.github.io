@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="Charliexiu">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://evan.beee.top" crossorigin>
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="https://ccharlie-xiu.github.io/2023/04/08/微服务/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+        <meta name="description" content="约定大于配置 微服务🛎️MVC三层架构 MVVM微服务架构   模块化 -&gt; http 通信 （rpc）  高内聚 低耦合 SpringBootSpring .zip 安装  安装地址 https:&#x2F;&#x2F;start.spring.io&#x2F;   1.8JDK 配置8.0版本java  按图片配置 zip压缩包  产出springboot 压缩包 (generate)  Lombok thymel">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微服务-SpringBoot">
+<meta property="og:url" content="https://ccharlie-xiu.github.io/2023/04/08/%E5%BE%AE%E6%9C%8D%E5%8A%A1/">
+<meta property="og:site_name" content="CharlieXiu">
+<meta property="og:description" content="约定大于配置 微服务🛎️MVC三层架构 MVVM微服务架构   模块化 -&gt; http 通信 （rpc）  高内聚 低耦合 SpringBootSpring .zip 安装  安装地址 https:&#x2F;&#x2F;start.spring.io&#x2F;   1.8JDK 配置8.0版本java  按图片配置 zip压缩包  产出springboot 压缩包 (generate)  Lombok thymel">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-04-08T14:35:17.685Z">
+<meta property="article:modified_time" content="2023-04-08T14:36:19.512Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/redefine-favicon.svg" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/redefine-favicon.svg">
+    <meta name="theme-color" content="#34ecf9">
+    <link rel="shortcut icon" href="/images/redefine-favicon.svg">
+    <!--- Page Info-->
+    
+    <title>
+        
+            微服务-SpringBoot -
+        
+        CharlieXiu&#39;s Blog
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<link rel="stylesheet" href="/assets/fonts.css">
+
+    <!--- Font Part-->
+    
+    
+    
+        <link href="" rel="stylesheet">
+    
+    
+        <link href="" rel="stylesheet">
+    
+
+    <!--- Inject Part-->
+    
+    <script id="hexo-configurations">
+    let Global = window.Global || {};
+    Global.hexo_config = {"hostname":"ccharlie-xiu.github.io","root":"/","language":"zh-CN","path":"search.xml"};
+    Global.theme_config = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center"},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[""]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":true,"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#34ecf9","secondary":null},"global":{"fonts":{"chinese":{"enable":true,"family":null,"url":null},"english":{"enable":true,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":true},"scroll_progress":{"bar":true,"percentage":true},"busuanzi_counter":{"enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"pjax":true,"open_graph":true},"home_banner":{"enable":true,"image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title":"查理 博客 Charlie's Blog","subtitle":{"text":["来看了，就收藏吧","万一哪天想看找不到了呢。"],"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":2000,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"links":{"github":"https://github.com/CCharlie-xiu","instagram":null,"zhihu":null,"twitter":null,"email":"https://github.com/CCharlie-xiu","bilbil":"https://space.bilibili.com/385332728?spm_id_from=333.1007.0.0"}}},"plugins":{"feed":{"enable":true},"aplayer":{"enable":true,"type":"fixed","audios":[{"name":"Something Just Like This","artist":"Coldplay","url":"https://evan.beee.top/music/Something%20Just%20Like%20This%20-%20The%20Chainsmokers%E3%80%81Coldplay.mp3","cover":"https://evan.beee.top/music/covers/Something_Just_Like_This.png"}],"autoplay":true},"mermaid":{"enable":true,"version":"9.3.0"}},"version":"2.1.1","navbar":{"auto_hide":false,"color":{"left":"#b3ffc6","right":"#b3fff6","transparency":35},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"About":{"icon":"fa-regular fa-user","submenus":{"Me":"/about","Github":"https://github.com/CCharlie-xiu","Blog":"https://ohevan.com","Friends":"/friends"}}},"search":{"enable":true,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","announcement":null,"links":{"Categories":{"path":"/categories","icon":"fa-regular fa-folder"}}},"article_date_format":"auto","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}}};
+    Global.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/fontawesome/light.min.css">
+
+    
+    
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fa-solid fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="main-content-container">
+
+        <div class="main-content-header">
+            <header class="navbar-container">
+    
+    <div class="navbar-content">
+        <div class="left">
+            
+                <a class="logo-image" href="/">
+                    <img src="/images/redefine-logo.svg">
+                </a>
+            
+            <a class="logo-title" href="/">
+                
+                CharlieXiu&#39;s Blog
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-house"></i>
+                                        
+                                        首页
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/archives"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-archive"></i>
+                                        
+                                        归档
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="has-dropdown" 
+                                    href="#" onClick="return false;">
+                                    
+                                        
+                                            <i class="fa-regular fa-user"></i>
+                                        
+                                        关于&nbsp;<i class="fa-solid fa-chevron-down"></i>
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                                    <ul class="sub-menu">
+                                    
+                                        <li>
+                                        <a href="/about">ME
+                                        </a>
+                                        </li>
+                                    
+                                        <li>
+                                        <a target="_blank" rel="noopener" href="https://github.com/CCharlie-xiu">GITHUB
+                                        </a>
+                                        </li>
+                                    
+                                        <li>
+                                        <a target="_blank" rel="noopener" href="https://ohevan.com">BLOG
+                                        </a>
+                                        </li>
+                                    
+                                        <li>
+                                        <a href="/friends">友情链接
+                                        </a>
+                                        </li>
+                                    
+                                    </ul>
+                                
+                            </li>
+                    
+                    
+                        <li class="navbar-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i></div>
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="navbar-drawer">
+        <ul class="drawer-navbar-list">
+            
+                
+                    <li class="drawer-navbar-item flex-center">
+                        <a class="" 
+                        href="/"  >
+                             
+                                
+                                    <i class="fa-regular fa-house"></i>
+                                
+                                首页
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-navbar-item flex-center">
+                        <a class="" 
+                        href="/archives"  >
+                             
+                                
+                                    <i class="fa-regular fa-archive"></i>
+                                
+                                归档
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-navbar-item flex-center">
+                        <a class="has-dropdown" 
+                        href="#" onClick="return false;">
+                            
+                                
+                                    <i class="fa-regular fa-user"></i>
+                                
+                                关于&nbsp;<i class="fa-solid fa-chevron-down"></i>
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                              
+                        
+                            <li class="dropdown-item flex-center">
+                                <a class="dropdown-item" href="/about">ME</a>
+                            </li>
+                        
+                            <li class="dropdown-item flex-center">
+                                <a class="dropdown-item" target="_blank" rel="noopener" href="https://github.com/CCharlie-xiu">GITHUB</a>
+                            </li>
+                        
+                            <li class="dropdown-item flex-center">
+                                <a class="dropdown-item" target="_blank" rel="noopener" href="https://ohevan.com">BLOG</a>
+                            </li>
+                        
+                            <li class="dropdown-item flex-center">
+                                <a class="dropdown-item" href="/friends">友情链接</a>
+                            </li>
+                        
+                    
+            
+
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="main-content-body">
+
+            
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="post-page-container">
+        <div class="article-content-container">
+
+            
+            
+                <div class="article-title">
+                    <h1 class="article-title-regular">微服务-SpringBoot</h1>
+                </div>
+            
+                
+            
+
+            
+                <div class="article-header">
+                    <div class="avatar">
+                        <img src="/images/redefine-avatar.svg">
+                    </div>
+                    <div class="info">
+                        <div class="author">
+                            <span class="name">Charliexiu</span>
+                            
+                                <span class="author-label"></span>
+                            
+                        </div>
+                        <div class="meta-info">
+                            <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2023-04-08 22:35:17</span>
+        <span class="mobile">2023-04-08 22:35</span>
+        <span class="hover-info">创建</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2023-04-08 22:36:19</span>
+            <span class="mobile">2023-04-08 22:36</span>
+            <span class="hover-info">更新</span>
+        </span>
+    
+
+    
+    
+
+    
+    
+    
+    
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            
+
+            <div class="article-content markdown-body">
+                <p><em>约定大于配置</em></p>
+<h1 id="微服务🛎️"><a href="#微服务🛎️" class="headerlink" title="微服务🛎️"></a>微服务🛎️</h1><p>MVC三层架构 MVVM微服务架构</p>
+<hr>
+<blockquote>
+<p>模块化 -&gt; http 通信 （rpc）</p>
+</blockquote>
+<p><code>高内聚 低耦合</code></p>
+<h1 id="SpringBoot"><a href="#SpringBoot" class="headerlink" title="SpringBoot"></a>SpringBoot</h1><h2 id="Spring-zip-安装"><a href="#Spring-zip-安装" class="headerlink" title="Spring .zip 安装"></a>Spring .zip 安装</h2><hr>
+<blockquote>
+<p><code>安装地址</code></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://start.spring.io/" >https://start.spring.io/ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+</blockquote>
+<p>1.8JDK 配置8.0版本java</p>
+<blockquote>
+<p>按图片配置 zip压缩包</p>
+</blockquote>
+<p>产出springboot 压缩包 (generate)</p>
+<hr>
+<h2 id="Lombok-thymeleaf-web-插件导入"><a href="#Lombok-thymeleaf-web-插件导入" class="headerlink" title="Lombok thymeleaf web 插件导入"></a>Lombok thymeleaf web 插件导入</h2><blockquote>
+<p>官网导入三个依赖</p>
+</blockquote>
+<hr>
+<h2 id="pom-xml-解读"><a href="#pom-xml-解读" class="headerlink" title="pom.xml 解读"></a>pom.xml 解读</h2><hr>
+<blockquote>
+<p>继承依赖(父项目) <code>org.springframework.boot</code> 远程项目包</p>
+</blockquote>
+<div class="highlight-container" data-rel="Xml"><figure class="iseeu highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">parent</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-parent<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.7.5<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">relativePath</span>/&gt;</span> <span class="comment">&lt;!-- lookup parent from repository --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">parent</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+<p>项目依赖（dependencies）</p>
+<blockquote>
+<p>web 依赖 ： tomcat , dispatcherServlet, xml</p>
+<p>实现Http 接口</p>
+</blockquote>
+<div class="highlight-container" data-rel="Xml"><figure class="iseeu highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+<blockquote>
+<p>打包（jar）插件</p>
+</blockquote>
+<div class="highlight-container" data-rel="Xml"><figure class="iseeu highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+<h3 id="配置端口resources-x2F-application-properties"><a href="#配置端口resources-x2F-application-properties" class="headerlink" title="配置端口resources&#x2F;application.properties"></a>配置端口resources&#x2F;application.properties</h3><div class="highlight-container" data-rel="Properties"><figure class="iseeu highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">server.port</span> = <span class="string">8081</span></span><br></pre></td></tr></table></figure></div>
+
+<hr>
+<h1 id="banner-txt-自制横幅"><a href="#banner-txt-自制横幅" class="headerlink" title="banner.txt(自制横幅)"></a>banner.txt(自制横幅)</h1><blockquote>
+<p>在 resources 目录下创建 <code>banner.txt</code></p>
+</blockquote>
+<p>    前往 <a class="link"   target="_blank" rel="noopener" href="https://www.bootschool.net/ascii" >Spring Boot banner在线生成工具 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<blockquote>
+<p><a class="link"   target="_blank" rel="noopener" href="https://www.bootschool.net/ascii" >Spring Boot banner在线生成工具，制作下载英文banner.txt，修改替换banner.txt文字实现自定义，个性化启动banner-bootschool.net <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> 这个网站自定义自己的banner</p>
+</blockquote>
+<hr>
+<h1 id="properties-后缀"><a href="#properties-后缀" class="headerlink" title=".properties 后缀"></a>.properties 后缀</h1><blockquote>
+<p>.properties 后缀文件皆为自定组件，自定配置，所以在引入自定义配置后，查找相关组件配置的配置版本和信息，搜索 .properties</p>
+</blockquote>
+<hr>
+<h1 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h1><h2 id="SpringBootConfiguration"><a href="#SpringBootConfiguration" class="headerlink" title="@SpringBootConfiguration"></a>@SpringBootConfiguration</h2><p><code>configuration 构造 配置</code></p>
+<table>
+<thead>
+<tr>
+<th>@SpringBootConfiguration</th>
+<th>SpringBoot配置</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>@Configuration</td>
+<td>spring配置类</td>
+</tr>
+<tr>
+<td>@Component</td>
+<td>组件</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>springboot在启动的时候，从类路径下&#x2F;META-INF&#x2F; spring.factories获取指定的</p>
+</blockquote>
+<hr>
+<h2 id="SpringBootApplication"><a href="#SpringBootApplication" class="headerlink" title="@SpringBootApplication"></a>@SpringBootApplication</h2><h2 id="run-方法的理解"><a href="#run-方法的理解" class="headerlink" title="run() 方法的理解"></a>run() 方法的理解</h2><blockquote>
+<p>SpringBootApplication 启动器</p>
+</blockquote>
+<ul>
+<li><p>constructor 构造</p>
+</li>
+<li><p>init (初始化) ·<code>run() 方法的理解</code></p>
+<ul>
+<li><p>推断应用类型是否为WEB</p>
+</li>
+<li><p>加载所有可用初始化配置</p>
+</li>
+<li><p>设置所有可用程序监听器</p>
+</li>
+<li><p>推断并设置main方法的定义类</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="Autowired"><a href="#Autowired" class="headerlink" title="@Autowired"></a>@Autowired</h2><h2 id="yaml-匹配"><a href="#yaml-匹配" class="headerlink" title="yaml 匹配"></a>yaml 匹配</h2><h3 id="yaml配置文件自定义随机值"><a href="#yaml配置文件自定义随机值" class="headerlink" title="yaml配置文件自定义随机值"></a>yaml配置文件自定义随机值</h3><div class="highlight-container" data-rel="Yaml"><figure class="iseeu highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">xiu:</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">hah$&#123;random.uuid&#125;</span></span><br><span class="line">    <span class="attr">age:</span> <span class="string">$&#123;random.int&#125;</span></span><br><span class="line">    <span class="attr">hello:</span> <span class="string">$&#123;xiu.world:world&#125;_xiu</span></span><br><span class="line">    <span class="attr">happy:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure></div>
+
+<p><code>hello: $&#123;xiu.world:world&#125;_xiu 表示如果xiu.world存在 则使用xiu.world 不存在用 冒号 （:）后面的值代替</code></p>
+<blockquote>
+<p>xiu 有参构造函数：</p>
+</blockquote>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="title function_">xiu</span><span class="params">(String name, Integer age, Boolean happy, String hello)</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>.name = name;</span><br><span class="line">    <span class="built_in">this</span>.age = age;</span><br><span class="line">    <span class="built_in">this</span>.happy = happy;</span><br><span class="line">    <span class="built_in">this</span>.hello = hello;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<blockquote>
+<p>它可以对类成员变量、方法及构造函数进行标注，完成自动装配的工作</p>
+</blockquote>
+<p><code>编写构造方法，toSting()</code></p>
+<h2 id="ConfigurationProperties-prefix-x3D-“xiu”"><a href="#ConfigurationProperties-prefix-x3D-“xiu”" class="headerlink" title="@ConfigurationProperties(prefix &#x3D; “xiu”)"></a>@ConfigurationProperties(prefix &#x3D; “xiu”)</h2><p><code>configurationProperties 注解绑定yaml</code></p>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Autowired</span></span><br><span class="line"><span class="keyword">private</span> xiu xu;</span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">contextLoads</span><span class="params">()</span> &#123;</span><br><span class="line">    System.out.println(xu);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="PropertySource"><a href="#PropertySource" class="headerlink" title="@PropertySource"></a>@PropertySource</h2><blockquote>
+<p>指定配置文件</p>
+<p>@PropertySource( value &#x3D; “classpath:application.properties”)</p>
+<p>.properties 后缀文件的用法</p>
+</blockquote>
+<hr>
+<h2 id="Validated"><a href="#Validated" class="headerlink" title="@Validated"></a>@Validated</h2><blockquote>
+<p>校验注解 （JSR303）</p>
+</blockquote>
+<ul>
+<li>@NotNull(message &#x3D; “id 不能为 null”)</li>
+</ul>
+<hr>
+<h1 id="SpringBoot-全局配置文件"><a href="#SpringBoot-全局配置文件" class="headerlink" title="SpringBoot 全局配置文件"></a>SpringBoot 全局配置文件</h1><h2 id="application"><a href="#application" class="headerlink" title="application"></a>application</h2><p>application 名称不能变</p>
+<ul>
+<li><p>程序可以同时存在 yaml 和 properties 两个配置文件</p>
+</li>
+<li><p>但必须都是 application</p>
+</li>
+<li><p>同时，优先级 yaml &gt; properties</p>
+</li>
+</ul>
+<p><code>两种表示形式:</code></p>
+<blockquote>
+<p>application.yaml</p>
+<p>application.properties</p>
+</blockquote>
+<ul>
+<li>properties:</li>
+</ul>
+<div class="highlight-container" data-rel="Properties"><figure class="iseeu highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">server.port</span> = <span class="string">8081</span></span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>yaml:</li>
+</ul>
+<div class="highlight-container" data-rel="Yaml"><figure class="iseeu highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">server:</span></span><br><span class="line">    <span class="attr">port:</span> <span class="number">8081</span></span><br></pre></td></tr></table></figure></div>
+
+<h3 id="彩蛋（Easter-egg🥚）-YAML"><a href="#彩蛋（Easter-egg🥚）-YAML" class="headerlink" title="彩蛋（Easter egg🥚）: YAML"></a>彩蛋（Easter egg🥚）: YAML</h3><p>YAML是”YAML Ain’t a Markup Language”(YAML不是一种标记语言）的递归缩写。</p>
+<p>(YAML仍是一门配置语言)</p>
+<hr>
+<h1 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h1><h3 id="无参构造和有参构造，toString（），-getter-amp-setter"><a href="#无参构造和有参构造，toString（），-getter-amp-setter" class="headerlink" title="无参构造和有参构造，toString（）， getter&amp;setter"></a>无参构造和有参构造，toString（）， getter&amp;setter</h3><blockquote>
+<p>Alt + INSERT</p>
+</blockquote>
+<h3 id="搜索文件，库，类，方法"><a href="#搜索文件，库，类，方法" class="headerlink" title="搜索文件，库，类，方法"></a>搜索文件，库，类，方法</h3><blockquote>
+<p>Ctrl + Shift + F</p>
+</blockquote>
+<hr>
+<h1 id="双向绑定-名称"><a href="#双向绑定-名称" class="headerlink" title="双向绑定 名称"></a>双向绑定 名称</h1><blockquote>
+<p>first-name &#x3D;&#x3D;&#x3D; firstName</p>
+</blockquote>
+<hr>
+<h1 id="多文档模块（yaml）"><a href="#多文档模块（yaml）" class="headerlink" title="多文档模块（yaml）"></a>多文档模块（yaml）</h1><p><code>文章中的版本为 SpringBoot 2.7.0</code></p>
+<div class="highlight-container" data-rel="Yaml"><figure class="iseeu highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">     <span class="attr">profies:</span> <span class="string">test</span></span><br></pre></td></tr></table></figure></div>
+
+<blockquote>
+<p>替换为：</p>
+</blockquote>
+<div class="highlight-container" data-rel="Yaml"><figure class="iseeu highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">    <span class="attr">config:</span></span><br><span class="line">        <span class="attr">activate:</span></span><br><span class="line">            <span class="attr">on-profile:</span> <span class="string">test</span></span><br></pre></td></tr></table></figure></div>
+
+<blockquote>
+<p>paalication.yaml 文件下</p>
+<p>用 — (三条短横线)分割每一个模块</p>
+</blockquote>
+<hr>
+<h1 id="SpringBoot-Web"><a href="#SpringBoot-Web" class="headerlink" title="SpringBoot Web"></a>SpringBoot Web</h1><h2 id="静态资源"><a href="#静态资源" class="headerlink" title="静态资源"></a>静态资源</h2><table>
+<thead>
+<tr>
+<th>放置位置</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>classPath:&#x2F;</td>
+</tr>
+<tr>
+<td>resources</td>
+</tr>
+<tr>
+<td>static</td>
+</tr>
+<tr>
+<td>public</td>
+</tr>
+<tr>
+<td>优先级由上到下</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>表示 重写可以在 yaml &#x2F; properties 文件下 重写 @Override</p>
+</blockquote>
+<div class="highlight-container" data-rel="Properties"><figure class="iseeu highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring.mvc.static-path-pattern</span>=<span class="string">/hello/, classpath:/xiu/</span></span><br></pre></td></tr></table></figure></div>
+
+<hr>
+<h2 id="页面跳转"><a href="#页面跳转" class="headerlink" title="页面跳转"></a>页面跳转</h2><hr>
+<h2 id="自定义图标"><a href="#自定义图标" class="headerlink" title="自定义图标"></a>自定义图标</h2><hr>
+<h2 id="模板引擎（Thymeleaf）"><a href="#模板引擎（Thymeleaf）" class="headerlink" title="模板引擎（Thymeleaf）"></a>模板引擎（Thymeleaf）</h2><blockquote>
+<p>Thymeleaf 类似 vue</p>
+<p>可以绑定任何元素</p>
+<p>表达方式 : th:元素名称</p>
+</blockquote>
+<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">th:text</span>=<span class="string">&quot;$&#123;msg&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+<hr>
+<h1 id="Lombok"><a href="#Lombok" class="headerlink" title="Lombok"></a>Lombok</h1><blockquote>
+<p>数据引用，有参，无参</p>
+<p>@Data</p>
+<p>@AllArgsConstructor</p>
+<p>@NoArgsConstructor</p>
+</blockquote>
+<hr>
+
+            </div>
+
+            
+                <div class="post-copyright-info">
+                    <div class="article-copyright-info-container">
+    <ul>
+        <li><strong>标题:</strong> 微服务-SpringBoot</li>
+        <li><strong>作者:</strong> Charliexiu</li>
+        <li><strong>创建于:</strong> 2023-04-08 22:35:17</li>
+        
+            <li>
+                <strong>更新于:</strong> 2023-04-08 22:36:19
+            </li>
+        
+        <li>
+            <strong>链接:</strong> https://redefine.ohevan.com/2023/04/08/微服务/
+        </li>
+        <li>
+            <strong>版权声明:</strong> 本文章采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a> 进行许可。
+        </li>
+    </ul>
+</div>
+
+                </div>
+            
+
+            
+
+            
+
+            
+                <div class="article-nav">
+                    
+                    
+                        <div class="article-next">
+                            <a class="next"
+                            rel="next"
+                            href="/2023/04/08/lottie/"
+                            >
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">lottie动画在vue的使用</span>
+                                    <span class="post-nav-item">下一篇</span>
+                                </span>
+                                <span class="right arrow-icon flex-center">
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </span>
+                            </a>
+                        </div>
+                    
+                </div>
+            
+
+
+            
+                <div class="comment-container">
+                    <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fa-solid fa-comments"></i>&nbsp;评论
+    </div>
+    
+
+        
+            
+ 
+    <div id="waline"></div>
+    <script type="module"  data-pjax>
+        import { init } from 'https://evan.beee.top/js/waline.mjs';
+
+        function loadWaline() {
+            init({
+                el: '#waline',
+                serverURL: 'https://example.example.com',
+                lang: 'zh-CN',
+                dark: 'body[class~="dark-mode"]',
+                requiredMeta: ['nick','mail'], // cannot customize by theme config, change it yourself
+            });
+        }
+
+        if ('true') {
+            const loadWalineTimeout = setTimeout(() => {
+                loadWaline();
+                clearTimeout(loadWalineTimeout);
+            }, 1000);
+        } else {
+            window.addEventListener('DOMContentLoaded', loadWaline);
+        }
+        
+    </script>
+
+
+
+        
+    
+</div>
+
+                </div>
+            
+        </div>
+
+        
+            <div class="toc-content-container">
+                <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">此页目录</div>
+        <div class="page-title">微服务-SpringBoot</div>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BE%AE%E6%9C%8D%E5%8A%A1%F0%9F%9B%8E%EF%B8%8F"><span class="nav-text">微服务🛎️</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SpringBoot"><span class="nav-text">SpringBoot</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Spring-zip-%E5%AE%89%E8%A3%85"><span class="nav-text">Spring .zip 安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lombok-thymeleaf-web-%E6%8F%92%E4%BB%B6%E5%AF%BC%E5%85%A5"><span class="nav-text">Lombok thymeleaf web 插件导入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pom-xml-%E8%A7%A3%E8%AF%BB"><span class="nav-text">pom.xml 解读</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E7%AB%AF%E5%8F%A3resources-x2F-application-properties"><span class="nav-text">配置端口resources&#x2F;application.properties</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#banner-txt-%E8%87%AA%E5%88%B6%E6%A8%AA%E5%B9%85"><span class="nav-text">banner.txt(自制横幅)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#properties-%E5%90%8E%E7%BC%80"><span class="nav-text">.properties 后缀</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B3%A8%E8%A7%A3"><span class="nav-text">注解</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SpringBootConfiguration"><span class="nav-text">@SpringBootConfiguration</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SpringBootApplication"><span class="nav-text">@SpringBootApplication</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#run-%E6%96%B9%E6%B3%95%E7%9A%84%E7%90%86%E8%A7%A3"><span class="nav-text">run() 方法的理解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Autowired"><span class="nav-text">@Autowired</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#yaml-%E5%8C%B9%E9%85%8D"><span class="nav-text">yaml 匹配</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#yaml%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%87%AA%E5%AE%9A%E4%B9%89%E9%9A%8F%E6%9C%BA%E5%80%BC"><span class="nav-text">yaml配置文件自定义随机值</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ConfigurationProperties-prefix-x3D-%E2%80%9Cxiu%E2%80%9D"><span class="nav-text">@ConfigurationProperties(prefix &#x3D; “xiu”)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PropertySource"><span class="nav-text">@PropertySource</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Validated"><span class="nav-text">@Validated</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SpringBoot-%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-text">SpringBoot 全局配置文件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#application"><span class="nav-text">application</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BD%A9%E8%9B%8B%EF%BC%88Easter-egg%F0%9F%A5%9A%EF%BC%89-YAML"><span class="nav-text">彩蛋（Easter egg🥚）: YAML</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="nav-text">快捷键</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%A0%E5%8F%82%E6%9E%84%E9%80%A0%E5%92%8C%E6%9C%89%E5%8F%82%E6%9E%84%E9%80%A0%EF%BC%8CtoString%EF%BC%88%EF%BC%89%EF%BC%8C-getter-amp-setter"><span class="nav-text">无参构造和有参构造，toString（）， getter&amp;setter</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%90%9C%E7%B4%A2%E6%96%87%E4%BB%B6%EF%BC%8C%E5%BA%93%EF%BC%8C%E7%B1%BB%EF%BC%8C%E6%96%B9%E6%B3%95"><span class="nav-text">搜索文件，库，类，方法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A-%E5%90%8D%E7%A7%B0"><span class="nav-text">双向绑定 名称</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A4%9A%E6%96%87%E6%A1%A3%E6%A8%A1%E5%9D%97%EF%BC%88yaml%EF%BC%89"><span class="nav-text">多文档模块（yaml）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SpringBoot-Web"><span class="nav-text">SpringBoot Web</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90"><span class="nav-text">静态资源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%B5%E9%9D%A2%E8%B7%B3%E8%BD%AC"><span class="nav-text">页面跳转</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9B%BE%E6%A0%87"><span class="nav-text">自定义图标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E%EF%BC%88Thymeleaf%EF%BC%89"><span class="nav-text">模板引擎（Thymeleaf）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lombok"><span class="nav-text">Lombok</span></a></li></ol>
+
+    </div>
+</div>
+            </div>
+        
+    </div>
+</div>
+
+
+                
+
+            </div>
+            
+            
+
+        </div>
+
+        <div class="main-content-footer">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info">
+            &copy;
+            
+              <span>2023</span>
+              -
+            
+            2023&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">Charliexiu</a>
+        </div>
+        
+            <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv" class="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv" class="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv" class="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            <span class="powered-by-container">由 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" href="https://hexo.io">Hexo</a> 驱动</span>
+                <br>
+            <span class="theme-version-container">主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.1.1</a>
+        </div>
+        
+        
+        
+            <div id="start_div" style="display:none">
+                2023/4/8 20:00:00
+            </div>
+            <div>
+                博客已运行 <span class="odometer" id="runtime_days" ></span> 天 <span class="odometer" id="runtime_hours"></span> 小时 <span class="odometer" id="runtime_minutes"></span> 分钟 <span class="odometer" id="runtime_seconds"></span> 秒
+            </div>
+        
+        
+            <div class="customize-info info-item">联系 1453346832@qq.com</div>
+        
+        
+            <script async data-pjax>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="article-tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fa-regular fa-comments"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-side-tools-container">
+        <div class="side-tools-container">
+    <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex-center">
+            <i class="fa-regular fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-font-adjust-minus flex-center">
+            <i class="fa-regular fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-expand-width flex-center">
+            <i class="fa-regular fa-expand"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-dark-light-toggle flex-center">
+            <i class="fa-regular fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="right-bottom-tools tool-scroll-to-bottom flex-center">
+            <i class="fa-regular fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex-center">
+            <i class="fa-regular fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="right-bottom-tools tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fa-solid fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fa-solid fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/layouts/navbarShrink.js"></script>
+
+<script src="/js/tools/scrollTopBottom.js"></script>
+
+<script src="/js/tools/lightDarkSwitch.js"></script>
+
+
+
+    
+<script src="/js/tools/localSearch.js"></script>
+
+
+
+
+    
+<script src="/js/tools/codeBlock.js"></script>
+
+
+
+
+    
+<script src="/js/layouts/lazyload.js"></script>
+
+
+
+
+    
+<script src="/js/tools/runtime.js"></script>
+
+    
+<script src="/js/layouts/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/libs/Typed.min.js"></script>
+
+  
+<script src="/js/plugins/typed.js"></script>
+
+
+
+
+    
+<script src="/js/libs/mermaid.min.js"></script>
+
+    
+<script src="/js/plugins/mermaid.js"></script>
+
+
+
+
+
+<div class="post-scripts pjax">
+    
+        
+<script src="/js/tools/tocToggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/layouts/toc.js"></script>
+
+<script src="/js/plugins/tabs.js"></script>
+
+    
+</div>
+
+
+    
+<script src="/js/libs/pjax.min.js"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax',
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            Global.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            Global.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            Global.refresh();
+        });
+    });
+</script>
+
+
+
+
+    <div id="aplayer"></div>
+
+<script src="/js/libs/APlayer.min.js"></script>
+
+
+<script src="/js/plugins/aplayer.js"></script>
+
+
+</body>
+</html>
