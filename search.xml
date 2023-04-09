@@ -71,14 +71,12 @@
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="https://img-blog.csdnimg.cn/2611ecb55b89433fa0ba04221712dd61.png"
-                      alt="在这里插入图片描述"
-                ><br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://img-blog.csdnimg.cn/8ea4a229e04a4314bc00de3b1450a8ea.png"
-                      alt="在这里插入图片描述"
-                ><br><img  
+                     data-src="/images/git01.png"
+                      alt="Test"
+                ></p>
+</blockquote>
+<blockquote>
+<p><img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="https://img-blog.csdnimg.cn/28afaabfbe3349049f9b635b82035cba.png"
