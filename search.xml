@@ -783,4 +783,32 @@ let tags = await waitFnLoading(fetchTagList,&#39;fetch template tag...&#39;)&lt;
         <tag>JavaScript</tag>
       </tags>
   </entry>
+  <entry>
+    <title>函数柯里化</title>
+    <url>/2023/04/19/%E5%87%BD%E6%95%B0%E6%9F%AF%E9%87%8C%E5%8C%96/</url>
+    <content><![CDATA[<ul>
+<li>你可以一次性地调用 curry 函数，也可以每次只传一个参数分多次调用。</li>
+</ul>
+<p>curry 的用处非常广泛，就像在 <code>hasSpaces</code>、<code>findSpaces</code> 和 <code>censored</code> 看到的那样，只需传给函数一些参数，就能得到一个新函数。</p>
+<p>用 <code>map</code> 简单地把参数是单个元素的函数包裹一下，就能把它转换成参数为数组的函数。</p>
+<blockquote>
+<p>概念</p>
+<p>只传递给函数一部分参数来调用它，让它返回一个函数去处理剩下的参数。</p>
+</blockquote>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> getChildren = <span class="keyword">function</span>(<span class="params">x</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> x.<span class="property">childNodes</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> allTheChildren = <span class="title function_">map</span>(getChildren);</span><br></pre></td></tr></table></figure></div>
+
+<p>通过简单地传递几个参数，就能动态创建实用的新函数；而且还能带来一个额外好处，那就是保留了数学的函数定义，尽管参数不止一个。</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> add = <span class="keyword">function</span>(<span class="params">x</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">function</span>(<span class="params">y</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> x + y;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> increment = <span class="title function_">add</span>(<span class="number">1</span>);</span><br><span class="line"><span class="keyword">var</span> addTen = <span class="title function_">add</span>(<span class="number">10</span>);</span><br><span class="line"></span><br><span class="line"><span class="title function_">increment</span>(<span class="number">2</span>);</span><br><span class="line"><span class="comment">// 3</span></span><br><span class="line"></span><br><span class="line"><span class="title function_">addTen</span>(<span class="number">2</span>);</span><br><span class="line"><span class="comment">// 12</span></span><br></pre></td></tr></table></figure></div>
+
+<p>这里我们定义了一个 <code>add</code> 函数，它接受一个参数并返回一个新的函数。调用 <code>add</code> 之后，返回的函数就通过闭包的方式记住了 <code>add</code> 的第一个参数。一次性地调用它实在是有点繁琐，好在我们可以使用一个特殊的 <code>curry</code> 帮助函数（helper function）使这类函数的定义和调用更加容易。</p>
+<p>我们来创建一些 curry 函数享受下（译者注：此处原文是“for our enjoyment”，语出自圣经）。</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> curry = <span class="built_in">require</span>(<span class="string">&#x27;lodash&#x27;</span>).<span class="property">curry</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> match = <span class="title function_">curry</span>(<span class="keyword">function</span>(<span class="params">what, str</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> str.<span class="title function_">match</span>(what);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> replace = <span class="title function_">curry</span>(<span class="keyword">function</span>(<span class="params">what, replacement, str</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> str.<span class="title function_">replace</span>(what, replacement);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> filter = <span class="title function_">curry</span>(<span class="keyword">function</span>(<span class="params">f, ary</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> ary.<span class="title function_">filter</span>(f);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> map = <span class="title function_">curry</span>(<span class="keyword">function</span>(<span class="params">f, ary</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> ary.<span class="title function_">map</span>(f);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></div>
+]]></content>
+      <categories>
+        <category>额外技能</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+      </tags>
+  </entry>
 </search>
