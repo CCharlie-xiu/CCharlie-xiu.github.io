@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="Charliexiu">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://evan.beee.top" crossorigin>
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="https://ccharlie-xiu.github.io/2023/04/18/组件封装/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+        <meta name="description" content="🛎️组件封装封装组件的三个部分 结构 HTML  12345678910111213141516&lt;div id&#x3D;&quot;my-slider&quot; class&#x3D;&quot;slider-list&quot;&gt;      &lt;ul&gt;        &lt;li class&#x3D;&quot;slider-list__item--selected&quot;&gt;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CharlieXiu">
+<meta property="og:url" content="https://ccharlie-xiu.github.io/2023/04/18/%E7%BB%84%E4%BB%B6%E5%B0%81%E8%A3%85/index.html">
+<meta property="og:site_name" content="CharlieXiu">
+<meta property="og:description" content="🛎️组件封装封装组件的三个部分 结构 HTML  12345678910111213141516&lt;div id&#x3D;&quot;my-slider&quot; class&#x3D;&quot;slider-list&quot;&gt;      &lt;ul&gt;        &lt;li class&#x3D;&quot;slider-list__item--selected&quot;&gt;">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-04-18T15:49:24.324Z">
+<meta property="article:modified_time" content="2023-04-18T15:51:06.412Z">
+<meta property="article:author" content="CharlieXiu">
+<meta name="twitter:card" content="summary">
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/redefine-favicon.svg" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/redefine-favicon.svg">
+    <meta name="theme-color" content="#34ecf9">
+    <link rel="shortcut icon" href="/images/redefine-favicon.svg">
+    <!--- Page Info-->
+    
+    <title>
+        
+        CharlieXiu&#39;s Blog
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<link rel="stylesheet" href="/assets/fonts.css">
+
+    <!--- Font Part-->
+    
+    
+        <link href="" rel="stylesheet">
+    
+    
+        <link href="" rel="stylesheet">
+    
+    
+        <link href="" rel="stylesheet">
+    
+
+    <!--- Inject Part-->
+    
+    <script id="hexo-configurations">
+    let Global = window.Global || {};
+    Global.hexo_config = {"hostname":"ccharlie-xiu.github.io","root":"/","language":"zh-CN","path":"search.xml"};
+    Global.theme_config = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center"},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":true,"list":["must","new","current"]},"code_block":{"copy":true,"style":"mac","font":{"enable":true,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":true,"expand":true,"init_open":true},"copyright":true,"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#34ecf9","secondary":null},"global":{"fonts":{"chinese":{"enable":true,"family":null,"url":null},"english":{"enable":true,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":true},"scroll_progress":{"bar":true,"percentage":true},"busuanzi_counter":{"enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"pjax":true,"open_graph":true},"home_banner":{"enable":true,"image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title":"查理 博客 Charlie's Blog","subtitle":{"text":["来看了，就收藏吧","万一哪天想看找不到了呢。"],"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":2000,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":true,"links":{"github":"https://github.com/CCharlie-xiu","instagram":null,"zhihu":null,"bilbil":"https://space.bilibili.com/385332728?spm_id_from=333.1007.0.0","email":"https://github.com/CCharlie-xiu"}}},"plugins":{"feed":{"enable":true},"aplayer":{"enable":true,"type":"fixed","autoplay":true,"audios":[{"name":"Something Just Like This","artist":"Coldplay","url":"https://evan.beee.top/music/Something%20Just%20Like%20This%20-%20The%20Chainsmokers%E3%80%81Coldplay.mp3","cover":"https://evan.beee.top/music/covers/Something_Just_Like_This.png"}]},"mermaid":{"enable":true,"version":"9.3.0"}},"version":"2.1.1","navbar":{"auto_hide":true,"color":{"left":"#b3ffc6","right":"#b3fff6","transparency":35},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"BilBil":{"icon":"fa-regular fa-chart-bar","path":"https://space.bilibili.com/385332728?spm_id_from=333.1007.0.0"},"CSDN":{"icon":"fa-regular fa-archive","path":"https://blog.csdn.net/qq_50767141?spm=1000.2115.3001.5343"},"Github":{"icon":"fa-regular fa-user","path":"https://github.com/CCharlie-xiu"}},"search":{"enable":true,"preload":true},"categories":{"Categories":{"icon":"fa-solid fa-folder","path":"/categories/"}}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","announcement":"如你所见","links":{"Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"Categories":{"path":"/categories","icon":"fa-regular fa-folder"}}},"article_date_format":"auto","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}}};
+    Global.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/fontawesome/light.min.css">
+
+    
+    
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fa-solid fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="main-content-container">
+
+        <div class="main-content-header">
+            <header class="navbar-container">
+    
+    <div class="navbar-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                CharlieXiu&#39;s Blog
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-house"></i>
+                                        
+                                        首页
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    target="_blank" rel="noopener" href="https://space.bilibili.com/385332728?spm_id_from=333.1007.0.0"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-chart-bar"></i>
+                                        
+                                        BILBIL
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    target="_blank" rel="noopener" href="https://blog.csdn.net/qq_50767141?spm=1000.2115.3001.5343"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-archive"></i>
+                                        
+                                        CSDN
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    target="_blank" rel="noopener" href="https://github.com/CCharlie-xiu"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-user"></i>
+                                        
+                                        GITHUB
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                        <li class="navbar-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i></div>
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="navbar-drawer">
+        <ul class="drawer-navbar-list">
+            
+                
+                    <li class="drawer-navbar-item flex-center">
+                        <a class="" 
+                        href="/"  >
+                             
+                                
+                                    <i class="fa-regular fa-house"></i>
+                                
+                                首页
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-navbar-item flex-center">
+                        <a class="" 
+                        target="_blank" rel="noopener" href="https://space.bilibili.com/385332728?spm_id_from=333.1007.0.0"  >
+                             
+                                
+                                    <i class="fa-regular fa-chart-bar"></i>
+                                
+                                BILBIL
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-navbar-item flex-center">
+                        <a class="" 
+                        target="_blank" rel="noopener" href="https://blog.csdn.net/qq_50767141?spm=1000.2115.3001.5343"  >
+                             
+                                
+                                    <i class="fa-regular fa-archive"></i>
+                                
+                                CSDN
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-navbar-item flex-center">
+                        <a class="" 
+                        target="_blank" rel="noopener" href="https://github.com/CCharlie-xiu"  >
+                             
+                                
+                                    <i class="fa-regular fa-user"></i>
+                                
+                                GITHUB
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="main-content-body">
+
+            
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="post-page-container">
+        <div class="article-content-container">
+
+            
+            
+                <div class="article-title">
+                    <h1 class="article-title-regular"></h1>
+                </div>
+            
+                
+            
+
+            
+                <div class="article-header">
+                    <div class="avatar">
+                        <img src="/images/redefine-avatar.svg">
+                    </div>
+                    <div class="info">
+                        <div class="author">
+                            <span class="name">Charliexiu</span>
+                            
+                                <span class="author-label">Lv2</span>
+                            
+                        </div>
+                        <div class="meta-info">
+                            <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2023-04-18 23:49:24</span>
+        <span class="mobile">2023-04-18 23:49</span>
+        <span class="hover-info">创建</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2023-04-18 23:51:06</span>
+            <span class="mobile">2023-04-18 23:51</span>
+            <span class="hover-info">更新</span>
+        </span>
+    
+
+    
+    
+
+    
+    
+    
+    
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            
+
+            <div class="article-content markdown-body">
+                <h1 id="🛎️组件封装"><a href="#🛎️组件封装" class="headerlink" title="🛎️组件封装"></a>🛎️组件封装</h1><h2 id="封装组件的三个部分"><a href="#封装组件的三个部分" class="headerlink" title="封装组件的三个部分"></a>封装组件的三个部分</h2><ol>
+<li>结构 HTML</li>
+</ol>
+<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;my-slider&quot;</span> <span class="attr">class</span>=<span class="string">&quot;slider-list&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">&quot;slider-list__item--selected&quot;</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;https://p5.ssl.qhimg.com/t0119c74624763dd070.png&quot;</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">&quot;slider-list__item&quot;</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;https://p4.ssl.qhimg.com/t01adbe3351db853eb3.jpg&quot;</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">&quot;slider-list__item&quot;</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;https://p2.ssl.qhimg.com/t01645cd5ba0c3b60cb.jpg&quot;</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">&quot;slider-list__item&quot;</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;https://p4.ssl.qhimg.com/t01331ac159b58f5478.jpg&quot;</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+<ol start="2">
+<li>效果 CSS</li>
+</ol>
+<div class="highlight-container" data-rel="Css"><figure class="iseeu highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+<ol start="3">
+<li>行为 JavaScript</li>
+</ol>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 轮播图类 里面封装一些api</span></span><br><span class="line">      <span class="keyword">class</span> <span class="title class_">Slider</span> &#123;</span><br><span class="line">        <span class="title function_">constructor</span>(<span class="params">id</span>) &#123;</span><br><span class="line">          <span class="variable language_">this</span>.<span class="property">container</span> = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(id);</span><br><span class="line">          <span class="variable language_">this</span>.<span class="property">items</span> = <span class="variable language_">this</span>.<span class="property">container</span>.<span class="title function_">querySelectorAll</span>(</span><br><span class="line">            <span class="string">&quot;.slider-list__item, .slider-list__item--selected&quot;</span></span><br><span class="line">          );</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 获取选中的图片元素</span></span><br><span class="line">        <span class="title function_">getSelectedItem</span>(<span class="params"></span>) &#123;</span><br><span class="line">          <span class="keyword">const</span> selected = <span class="variable language_">this</span>.<span class="property">container</span>.<span class="title function_">querySelector</span>(</span><br><span class="line">            <span class="string">&quot;.slider-list__item--selected&quot;</span></span><br><span class="line">          );</span><br><span class="line">          <span class="keyword">return</span> selected;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//获取选中图片的索引值，返回其在items数组中的位置</span></span><br><span class="line">        <span class="title function_">getSelectedItemIndex</span>(<span class="params"></span>) &#123;</span><br><span class="line">          <span class="comment">// Array.from() 方法对一个类似数组或可迭代对象创建一个新的，浅拷贝的数组实例。</span></span><br><span class="line">          <span class="comment">// querySelectorAll返回NodeList 对象，NodeList 不是一个数组，是一个类似数组的对象(Like Array Object)。</span></span><br><span class="line">          <span class="comment">// 虽然 NodeList 不是一个数组，但是可以使用 forEach() 来迭代。你还可以使用 Array.from() 将其转换为数组。</span></span><br><span class="line">          <span class="keyword">return</span> <span class="title class_">Array</span>.<span class="title function_">from</span>(<span class="variable language_">this</span>.<span class="property">items</span>).<span class="title function_">indexOf</span>(<span class="variable language_">this</span>.<span class="title function_">getSelectedItem</span>());</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 跳转到指定索引的图片</span></span><br><span class="line">        <span class="title function_">slideTo</span>(<span class="params">idx</span>) &#123;</span><br><span class="line">          <span class="keyword">const</span> selected = <span class="variable language_">this</span>.<span class="title function_">getSelectedItem</span>();</span><br><span class="line">          <span class="keyword">if</span> (selected) &#123;</span><br><span class="line">            <span class="comment">// 将之前选择的图片标记为普通状态</span></span><br><span class="line">            selected.<span class="property">className</span> = <span class="string">&quot;slider-list__item&quot;</span>;</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="keyword">const</span> item = <span class="variable language_">this</span>.<span class="property">items</span>[idx];</span><br><span class="line">          <span class="keyword">if</span> (item) &#123;</span><br><span class="line">            <span class="comment">// 将当前选中的图片标记为选中状态</span></span><br><span class="line">            item.<span class="property">className</span> = <span class="string">&quot;slider-list__item--selected&quot;</span>;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 跳转到下一索引的图片，将下一张图片标记为选中状态</span></span><br><span class="line">        <span class="title function_">slideNext</span>(<span class="params"></span>) &#123;</span><br><span class="line">          <span class="keyword">const</span> currentIdx = <span class="variable language_">this</span>.<span class="title function_">getSelectedItemIndex</span>();</span><br><span class="line">          <span class="keyword">const</span> nextIdx = (currentIdx + <span class="number">1</span>) % <span class="variable language_">this</span>.<span class="property">items</span>.<span class="property">length</span>;</span><br><span class="line">          <span class="variable language_">this</span>.<span class="title function_">slideTo</span>(nextIdx);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 跳转到上一索引的图片，将上一张图片标记为选中状态</span></span><br><span class="line">        <span class="title function_">slidePrevious</span>(<span class="params"></span>) &#123;</span><br><span class="line">          <span class="keyword">const</span> currentIdx = <span class="variable language_">this</span>.<span class="title function_">getSelectedItemIndex</span>();</span><br><span class="line">          <span class="keyword">const</span> previousIdx =</span><br><span class="line">            (<span class="variable language_">this</span>.<span class="property">items</span>.<span class="property">length</span> + currentIdx - <span class="number">1</span>) % <span class="variable language_">this</span>.<span class="property">items</span>.<span class="property">length</span>;</span><br><span class="line">          <span class="variable language_">this</span>.<span class="title function_">slideTo</span>(previousIdx);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">const</span> slider = <span class="keyword">new</span> <span class="title class_">Slider</span>(<span class="string">&quot;my-slider&quot;</span>);</span><br><span class="line">      <span class="built_in">setInterval</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">        slider.<span class="title function_">slideNext</span>();</span><br><span class="line">      &#125;, <span class="number">1000</span>);</span><br></pre></td></tr></table></figure></div>
+
+<hr>
+<h2 id="封装需要考虑的原则"><a href="#封装需要考虑的原则" class="headerlink" title="封装需要考虑的原则"></a>封装需要考虑的原则</h2><ol>
+<li><p>封装性</p>
+</li>
+<li><p>正确性</p>
+</li>
+<li><p>扩展性</p>
+</li>
+<li><p>复用性</p>
+</li>
+<li><p>简易性</p>
+</li>
+</ol>
+<hr>
+<h2 id="实现插件化"><a href="#实现插件化" class="headerlink" title="实现插件化"></a>实现插件化</h2><p>将控制元素抽取成插件</p>
+<p>插件与组件之间通过<strong>依赖注入</strong>方式建立联系</p>
+<h2 id="实现模板化"><a href="#实现模板化" class="headerlink" title="实现模板化"></a>实现模板化</h2><p>这一步对结构 HTML进行模块化， 更易扩展和消除</p>
+<h2 id="实现抽象化"><a href="#实现抽象化" class="headerlink" title="实现抽象化"></a>实现抽象化</h2><p>转化为组件的关键步骤</p>
+<p>将通用组件模型抽象出来</p>
+<hr>
+<blockquote>
+<p>vue 中在components文件夹下，通过写一个页面包含三个部分在另一个页面通过组件名引入的方式就是封装组件最好的理解方式</p>
+</blockquote>
+<h2 id="插件化解耦JavaScript"><a href="#插件化解耦JavaScript" class="headerlink" title="插件化解耦JavaScript"></a>插件化解耦JavaScript</h2><p>这是在还没插件化之前的javascript，初始化，构造函数的配置，包括了很多事件监听和鼠标点击事件，以及动画的实现。</p>
+<blockquote>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">constructor</span>(<span class="params">id, cycle = <span class="number">3000</span></span>) &#123;</span><br><span class="line">          <span class="variable language_">this</span>.<span class="property">container</span> = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(id);</span><br><span class="line">          <span class="variable language_">this</span>.<span class="property">items</span> = <span class="variable language_">this</span>.<span class="property">container</span>.<span class="title function_">querySelectorAll</span>(</span><br><span class="line">            <span class="string">&quot;.slider-list__item, .slider-list__item--selected&quot;</span></span><br><span class="line">          );</span><br><span class="line">          <span class="variable language_">this</span>.<span class="property">cycle</span> = cycle;</span><br><span class="line"></span><br><span class="line">          <span class="keyword">const</span> controller = <span class="variable language_">this</span>.<span class="property">container</span>.<span class="title function_">querySelector</span>(</span><br><span class="line">            <span class="string">&quot;.slide-list__control&quot;</span></span><br><span class="line">          );</span><br><span class="line">          <span class="keyword">if</span> (controller) &#123;</span><br><span class="line">            <span class="keyword">const</span> buttons = controller.<span class="title function_">querySelectorAll</span>(</span><br><span class="line">              <span class="string">&quot;.slide-list__control-buttons, .slide-list__control-buttons--selected&quot;</span></span><br><span class="line">            );</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 给小圆点加监听，经过某个圆点的就将图片切换到该位置的图片</span></span><br><span class="line">            controller.<span class="title function_">addEventListener</span>(<span class="string">&quot;mouseover&quot;</span>, <span class="function">(<span class="params">evt</span>) =&gt;</span> &#123;</span><br><span class="line">              <span class="keyword">const</span> idx = <span class="title class_">Array</span>.<span class="title function_">from</span>(buttons).<span class="title function_">indexOf</span>(evt.<span class="property">target</span>);</span><br><span class="line">              <span class="keyword">if</span> (idx &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="variable language_">this</span>.<span class="title function_">slideTo</span>(idx);</span><br><span class="line">                <span class="variable language_">this</span>.<span class="title function_">stop</span>();</span><br><span class="line">              &#125;</span><br><span class="line">            &#125;);</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 鼠标移开小圆点，就继续开始循环轮播</span></span><br><span class="line">            controller.<span class="title function_">addEventListener</span>(<span class="string">&quot;mouseout&quot;</span>, <span class="function">(<span class="params">evt</span>) =&gt;</span> &#123;</span><br><span class="line">              <span class="variable language_">this</span>.<span class="title function_">start</span>();</span><br><span class="line">            &#125;);</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 注册slide事件，将选中的图片和小圆点设置为selected状态</span></span><br><span class="line">            <span class="variable language_">this</span>.<span class="property">container</span>.<span class="title function_">addEventListener</span>(<span class="string">&quot;slide&quot;</span>, <span class="function">(<span class="params">evt</span>) =&gt;</span> &#123;</span><br><span class="line">              <span class="keyword">const</span> idx = evt.<span class="property">detail</span>.<span class="property">index</span>;</span><br><span class="line">              <span class="keyword">const</span> selected = controller.<span class="title function_">querySelector</span>(</span><br><span class="line">                <span class="string">&quot;.slide-list__control-buttons--selected&quot;</span></span><br><span class="line">              );</span><br><span class="line">              <span class="keyword">if</span> (selected) selected.<span class="property">className</span> = <span class="string">&quot;slide-list__control-buttons&quot;</span>;</span><br><span class="line">              buttons[idx].<span class="property">className</span> = <span class="string">&quot;slide-list__control-buttons--selected&quot;</span>;</span><br><span class="line">            &#125;);</span><br><span class="line">          &#125;</span><br></pre></td></tr></table></figure></div>
+</blockquote>
+<hr>
+<p>下面一段代码是在实现插件化之后的构造函数</p>
+<blockquote>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">constructor</span>(<span class="params">id, cycle = <span class="number">3000</span></span>) &#123;</span><br><span class="line">          <span class="variable language_">this</span>.<span class="property">container</span> = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(id);</span><br><span class="line">          <span class="variable language_">this</span>.<span class="property">items</span> = <span class="variable language_">this</span>.<span class="property">container</span>.<span class="title function_">querySelectorAll</span>(</span><br><span class="line">            <span class="string">&quot;.slider-list__item, .slider-list__item--selected&quot;</span></span><br><span class="line">          );</span><br><span class="line">          <span class="variable language_">this</span>.<span class="property">cycle</span> = cycle;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure></div>
+</blockquote>
+<p>对比可以发现，少了很多，在解耦合之前，也就是插件化封装之前，</p>
+<ul>
+<li><p>获取小圆点下标</p>
+</li>
+<li><p>鼠标移开小圆点事件</p>
+</li>
+<li><p>slide事件</p>
+</li>
+<li><p>button事件</p>
+</li>
+</ul>
+<p>都在构造函数里面，且无法通过直观的看出需要修改或是删除哪几个部分才能更改这个配置</p>
+<p>于是采用插件化</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">registerPlugins</span>(<span class="params">...plugins</span>) &#123;</span><br><span class="line">         plugins.<span class="title function_">forEach</span>(<span class="function">(<span class="params">plugin</span>) =&gt;</span> <span class="title function_">plugin</span>(<span class="variable language_">this</span>));</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">pluginController</span>(<span class="params">slider</span>) &#123; &#125;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">pluginPrevious</span>(<span class="params">slider</span>) &#123; &#125;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">pluginNext</span>(<span class="params">slider</span>) &#123; &#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>抽离后，采用调用插件的方式引入这些插件，实现增加和删除或是修改的操作</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">slider.<span class="title function_">registerPlugins</span>(pluginController, pluginPrevious, pluginNext);</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p>更多更详细的可以前往查看</p>
+<blockquote>
+<p>网址：<a class="link"   target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1991817?from=15425&areaSource=102001.20&traceId=m4ccLe2jSavTIAja06OVS" >【字节前端青训营】跟着月影学JavaScript—— 前端代码优化三大原则之组件封装，用原生JS写一个轮播图并封装 - 腾讯云开发者社区-腾讯云 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+</blockquote>
+
+            </div>
+
+            
+                <div class="post-copyright-info">
+                    <div class="article-copyright-info-container">
+    <ul>
+        <li><strong>标题:</strong> </li>
+        <li><strong>作者:</strong> Charliexiu</li>
+        <li><strong>创建于:</strong> 2023-04-18 23:49:24</li>
+        
+            <li>
+                <strong>更新于:</strong> 2023-04-18 23:51:06
+            </li>
+        
+        <li>
+            <strong>链接:</strong> https://ccharlie-xiu.github.io/2023/04/18/组件封装/
+        </li>
+        <li>
+            <strong>版权声明:</strong> 本文章采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a> 进行许可。
+        </li>
+    </ul>
+</div>
+
+                </div>
+            
+
+            
+
+            
+
+            
+                <div class="article-nav">
+                    
+                    
+                        <div class="article-next">
+                            <a class="next"
+                            rel="next"
+                            href="/2023/04/08/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"
+                            >
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">微服务-SpringBoot</span>
+                                    <span class="post-nav-item">下一篇</span>
+                                </span>
+                                <span class="right arrow-icon flex-center">
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </span>
+                            </a>
+                        </div>
+                    
+                </div>
+            
+
+
+            
+        </div>
+
+        
+            <div class="toc-content-container">
+                <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">此页目录</div>
+        <div class="page-title"></div>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%F0%9F%9B%8E%EF%B8%8F%E7%BB%84%E4%BB%B6%E5%B0%81%E8%A3%85"><span class="nav-number">1.</span> <span class="nav-text">🛎️组件封装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%81%E8%A3%85%E7%BB%84%E4%BB%B6%E7%9A%84%E4%B8%89%E4%B8%AA%E9%83%A8%E5%88%86"><span class="nav-number">1.1.</span> <span class="nav-text">封装组件的三个部分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%81%E8%A3%85%E9%9C%80%E8%A6%81%E8%80%83%E8%99%91%E7%9A%84%E5%8E%9F%E5%88%99"><span class="nav-number">1.2.</span> <span class="nav-text">封装需要考虑的原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E6%8F%92%E4%BB%B6%E5%8C%96"><span class="nav-number">1.3.</span> <span class="nav-text">实现插件化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E6%A8%A1%E6%9D%BF%E5%8C%96"><span class="nav-number">1.4.</span> <span class="nav-text">实现模板化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E6%8A%BD%E8%B1%A1%E5%8C%96"><span class="nav-number">1.5.</span> <span class="nav-text">实现抽象化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%92%E4%BB%B6%E5%8C%96%E8%A7%A3%E8%80%A6JavaScript"><span class="nav-number">1.6.</span> <span class="nav-text">插件化解耦JavaScript</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E5%A4%9A"><span class="nav-number">1.7.</span> <span class="nav-text">更多</span></a></li></ol></li></ol>
+
+    </div>
+</div>
+            </div>
+        
+    </div>
+</div>
+
+
+                
+
+            </div>
+            
+            
+
+        </div>
+
+        <div class="main-content-footer">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info">
+            &copy;
+            
+              <span>2023</span>
+              -
+            
+            2023&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">Charliexiu</a>
+        </div>
+        
+            <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv" class="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv" class="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv" class="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            <span class="powered-by-container">由 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" href="https://hexo.io">Hexo</a> 驱动</span>
+                <br>
+            <span class="theme-version-container">主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.1.1</a>
+        </div>
+        
+        
+        
+            <div id="start_div" style="display:none">
+                2023/4/8 20:00:00
+            </div>
+            <div>
+                博客已运行 <span class="odometer" id="runtime_days" ></span> 天 <span class="odometer" id="runtime_hours"></span> 小时 <span class="odometer" id="runtime_minutes"></span> 分钟 <span class="odometer" id="runtime_seconds"></span> 秒
+            </div>
+        
+        
+            <div class="customize-info info-item">联系 1453346832@qq.com</div>
+        
+        
+            <script async data-pjax>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="article-tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-side-tools-container">
+        <div class="side-tools-container">
+    <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex-center">
+            <i class="fa-regular fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-font-adjust-minus flex-center">
+            <i class="fa-regular fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-expand-width flex-center">
+            <i class="fa-regular fa-expand"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-dark-light-toggle flex-center">
+            <i class="fa-regular fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="right-bottom-tools tool-scroll-to-bottom flex-center">
+            <i class="fa-regular fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex-center">
+            <i class="fa-regular fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="right-bottom-tools tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fa-solid fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fa-solid fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/layouts/navbarShrink.js"></script>
+
+<script src="/js/tools/scrollTopBottom.js"></script>
+
+<script src="/js/tools/lightDarkSwitch.js"></script>
+
+
+
+    
+<script src="/js/tools/localSearch.js"></script>
+
+
+
+
+    
+<script src="/js/tools/codeBlock.js"></script>
+
+
+
+
+    
+<script src="/js/layouts/lazyload.js"></script>
+
+
+
+
+    
+<script src="/js/tools/runtime.js"></script>
+
+    
+<script src="/js/layouts/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/libs/Typed.min.js"></script>
+
+  
+<script src="/js/plugins/typed.js"></script>
+
+
+
+
+    
+<script src="/js/libs/mermaid.min.js"></script>
+
+    
+<script src="/js/plugins/mermaid.js"></script>
+
+
+
+
+
+<div class="post-scripts pjax">
+    
+        
+<script src="/js/tools/tocToggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/layouts/toc.js"></script>
+
+<script src="/js/plugins/tabs.js"></script>
+
+    
+</div>
+
+
+    
+<script src="/js/libs/pjax.min.js"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax',
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            Global.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            Global.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            Global.refresh();
+        });
+    });
+</script>
+
+
+
+
+    <div id="aplayer"></div>
+
+<script src="/js/libs/APlayer.min.js"></script>
+
+
+<script src="/js/plugins/aplayer.js"></script>
+
+
+</body>
+</html>
