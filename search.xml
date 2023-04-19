@@ -923,4 +923,41 @@ if err := server.ListenAndServe(); err != nil &#123;
         <tag>Go</tag>
       </tags>
   </entry>
+  <entry>
+    <title>单链表找重复</title>
+    <url>/2023/04/19/%E5%8D%95%E9%93%BE%E8%A1%A8/</url>
+    <content><![CDATA[<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>单链表，遍历每一个元素，相同就把这个元素删除然后继续往后</p>
+<p>- 采用一个新的指针指向头指针 head 然后向后遍历链表，删除相同元素，不相同就继续遍历</p>
+<p>- 这样方便直接顺序输出结果</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><div class="highlight-container" data-rel="Golang"><figure class="iseeu highlight golang"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"> * type ListNode struct &#123;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"> *     Val int</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"> *     Next *ListNode</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> ListNode <span class="keyword">struct</span> &#123;</span><br><span class="line"></span><br><span class="line">    Val  <span class="type">int</span></span><br><span class="line"></span><br><span class="line">    Next *ListNode</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">deleteDuplicates</span><span class="params">(head *ListNode)</span></span> *ListNode &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> head == <span class="literal">nil</span> || head.Next == <span class="literal">nil</span> &#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> head</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    curr := head</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> curr != <span class="literal">nil</span> &amp;&amp; curr.Next != <span class="literal">nil</span> &#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> curr.Val == curr.Next.Val &#123;</span><br><span class="line"></span><br><span class="line">            curr.Next = curr.Next.Next</span><br><span class="line"></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line"></span><br><span class="line">            curr = curr.Next</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> head</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>需要一个打印</p>
+<div class="highlight-container" data-rel="Golang"><figure class="iseeu highlight golang"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">printList</span><span class="params">(head *ListNode)</span></span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> head != <span class="literal">nil</span> &#123;</span><br><span class="line"></span><br><span class="line">        fmt.Print(head.Val, <span class="string">&quot; &quot;</span>)</span><br><span class="line"></span><br><span class="line">        head = head.Next</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    fmt.Println()</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>执行：</p>
+<div class="highlight-container" data-rel="Golang"><figure class="iseeu highlight golang"><table><tr><td class="code"><pre><span class="line">fun main &#123;</span><br><span class="line"></span><br><span class="line">    head := &amp;ListNode&#123;Val: <span class="number">1</span>, Next: &amp;ListNode&#123;Val: <span class="number">1</span>, Next: &amp;ListNode&#123;Val: <span class="number">2</span>, Next: &amp;ListNode&#123;Val: <span class="number">3</span>, Next: &amp;ListNode&#123;Val: <span class="number">3</span>&#125;&#125;&#125;&#125;&#125;</span><br><span class="line"></span><br><span class="line">    fmt.Println(<span class="string">&quot;Original List:&quot;</span>)</span><br><span class="line"></span><br><span class="line">    printList(head)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">// delete duplicates and print the result</span></span><br><span class="line"></span><br><span class="line">    newHead := deleteDuplicates(head)</span><br><span class="line"></span><br><span class="line">    fmt.Println(<span class="string">&quot;List with Duplicates Removed:&quot;</span>)</span><br><span class="line"></span><br><span class="line">    printList(newHead)</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="对代码做出解释"><a href="#对代码做出解释" class="headerlink" title="对代码做出解释"></a>对代码做出解释</h3><blockquote>
+<p> type ListNode struct  结构体定义了两个变量，第二个变量是一个自身结构体类型的指针</p>
+</blockquote>
+<blockquote>
+<p> 在 deleteDuplicates 函数中，执行 curr.Next &#x3D; curr.Next.Next 时，相当于将 curr 指针所指向的节点的 Next 指针指向了当前节点的下下个节点，这个操作修改了链表的结构，即将当前节点的下一个节点删除了。因为 head 存储的是链表头节点的地址，而不是链表节点的值或指针，所以当你修改链表结构时，链表的头节点的地址并没有发生改变，但链表的内容已经发生了改变。</p>
+</blockquote>
+<blockquote>
+<p> 这里可以这么理解，传进来的head就是 头指针，curr被赋值为head ，同样指向了链表的头节点，然后向后遍历，curr是本身，而curr.next就需要通过head.next去找，同理，curr.next.next也是在head找，找到后改变了head的next和next.</p>
+</blockquote>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://pic.leetcode.cn/1681918132-auxdap-image.png"
+                      alt="image.png"
+                >{:width&#x3D;400}</p>
+]]></content>
+      <categories>
+        <category>题解</category>
+      </categories>
+      <tags>
+        <tag>解题</tag>
+      </tags>
+  </entry>
 </search>
